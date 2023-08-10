@@ -76,7 +76,7 @@ const Simple = () => {
           <div className='col-span-5 lg:-m-45  flex justify-center items-center mt-50' style={{marginTop: '1px'}}>
             <br />
             <Image
-              src='/images/Simple/phonesopay.svg'
+              src='/images/Simple/phonesoleaspay.svg'
               alt='bannerphone'
               width={1013}
               height={760}

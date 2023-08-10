@@ -5,7 +5,7 @@ interface table {
     name: string;
     imgSrc: string;
     retrait: string;
-    
+
 }
 
 const tableData: table[] = [
@@ -14,7 +14,7 @@ const tableData: table[] = [
         name: "Orange Money",
         imgSrc: '/images/Table/bitcoin.svg',
         retrait: "A partir de 2%",
-        
+
     },
     {
         index: 2,
@@ -75,10 +75,13 @@ const tableData: table[] = [
 const Table = () => {
     return (
         <>
-            <div className='mx-auto max-w-7xl pt-40 px-6' id="price">
+            <div className='mx-auto max-w-7xl pt-40 px-6' >
+                <div className='text-center mb-14'>
+                    <h3 className='text-offwhite text-3xl md:text-5xl font-bold mb-3'>Tarification SoleasPay</h3>
+                    <p className='text-bluish md:text-lg font-normal leading-8'>Notre grille tarifaire vous permet d'avoir une vue d'ensemble sur vos transactions. Elle est garantie 100% exacte sans frais supplementaires. </p>
+                </div>
                 <div className="table-b bg-navyblue p-8 overflow-x-auto">
-                    <h3 className="text-offwhite text-2xl">Tarification SoleasPay</h3>
-                    <p className='text-bluish md:text-lg font-normal leading-8'>Notre grille tarifaire vous permet d'avoir une vue d'ensemble sur vos transactions. Elle est garantie 100% exacte sans frais supplementaires</p>
+
                     <table className="table-auto w-full mt-10">
                         <thead>
                             <tr className="text-white bg-darkblue rounded-lg">

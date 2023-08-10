@@ -31,7 +31,7 @@ const faqdata: faqdata[] = [
 
 const Faq = () => {
     return (
-        <div className="my-20 px-6" id="faq">
+        <div className="my-20 px-6">
             <h3 className="text-center text-3xl lg:text-5xl font-bold text-offwhite mb-3">Foire Aux Questions</h3>
             <p className="text-center lg:text-lg font-normal text-bluish">Vous trouverez ici les réponses aux questions les plus fréquemment posées par nos utilisateurs.</p>
 

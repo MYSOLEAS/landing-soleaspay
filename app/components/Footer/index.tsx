@@ -64,10 +64,10 @@ const footer = () => {
                     <Link href="#1" className="text-offwhite  text-sm font-normal mb-6 space-links">Accueil</Link>
                   </li>
                   <li className='mb-5'>
-                    <Link href="/terms" className="text-offwhite  text-sm font-normal mb-6 space-links">Terms & Conditions</Link>
+                    <Link href="/home/terms" className="text-offwhite  text-sm font-normal mb-6 space-links">Terms & Conditions</Link>
                   </li>
                   <li className='mb-5'>
-                    <Link href="/privacy" className="text-offwhite  text-sm font-normal mb-6 space-links">Privacy Policy</Link>
+                    <Link href="/home/privacy" className="text-offwhite  text-sm font-normal mb-6 space-links">Privacy Policy</Link>
                   </li>
                 
               </ul>

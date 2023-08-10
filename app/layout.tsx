@@ -10,7 +10,7 @@ export const metadata = {
   description: 'SoleasPay, an online payment gateway for every merchand',
   manifest : '/manifest.json',
   icons: {
-    icon: '/images/Logo/sopay.png',
+    icon: '/images/Logo/logo.svg',
   },
 }
 

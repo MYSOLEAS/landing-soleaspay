@@ -406,6 +406,7 @@ select {
 
 .typewriter-text {
   color: #e9833b;
+  word-wrap: break-word;
 }
 
 
