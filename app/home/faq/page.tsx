@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Disclosure } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/20/solid';
 
+
 interface faqdata {
     heading: string;
     subheading: string;
