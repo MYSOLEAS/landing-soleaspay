@@ -79,14 +79,14 @@ const Work = () => {
                 <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-5 mt-32'>
 
                     {workdata.map((items, i) => (
-                        <div className='card-b p-8' key={i}>
+                        <div className='card-b p-6' key={i}>
                             <div className='work-img-bg rounded-full flex justify-center absolute p-6'>
                                 <Image src={items.imgSrc} alt={items.imgSrc} width={44} height={44} />
                             </div>
                             <div>
                                 <Image src={'/images/Work/bg-arrow.svg'} alt="arrow-bg" width={85} height={35} />
                             </div>
-                            <h4 className='text-2xl text-offwhite font-semibold text-center mt-8'>{items.heading}</h4>
+                            <h6 className='text-2xl text-offwhite font-semibold text-center mt-6'>{items.heading}</h6>
                             <p className='text-base font-normal text-bluish text-center mt-2'>{items.subheading}</p>
                             <span className="text-base font-normal m-0 text-bluish text-center hides">{items.hiddenpara}</span>
                         </div>
