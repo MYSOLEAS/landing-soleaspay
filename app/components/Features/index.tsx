@@ -31,7 +31,10 @@ const Features = () => {
                 </div>
                 {/* Column-2 */}
                 <div>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-4 lg:-mr-56">
+                    <div style={{
+                          margin: "auto",
+                          marginBottom: "1rem",
+                        }} className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-4 lg:-mr-56">
                         {featuresdata.map((items, i) => (
                             <div className="bg-blue py-10 pr-12 pl-6 rounded-lg" key={i}>
                                 <div className="rounded-full gg h-16 w-16 flex items-center justify-center mb-10">

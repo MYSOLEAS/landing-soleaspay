@@ -40,10 +40,10 @@ const workdata: workdata[] = [
         hiddenpara: '',
     },
     {
-        imgSrc: '/images/Work/icon-three.svg',
-        heading: 'ACHETER ET VENDRE DE LA CRYPTO',
-        subheading: 'Achetez et vendez de la crypto-monnaie à partir de votre compte Soleaspay',
-        hiddenpara: 'ou en utilisant votre portefeuille mobile personnel au meilleur taux du marché.',
+        imgSrc: '/images/Work/icon-two.svg',
+        heading: 'CARTE VISA VIRTUELLE',
+        subheading: 'Protégez vos achats en ligne avec notre carte Visa virtuelle. Générez des cartes uniques pour vos transactions et contrôlez vos dépenses en ligne. ',
+        hiddenpara: '',
     },
     {
         imgSrc: '/images/Work/icon-two.svg',
