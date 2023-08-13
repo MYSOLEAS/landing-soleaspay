@@ -71,7 +71,7 @@ const Work = () => {
         <div>
             <div className='mx-auto max-w-7xl mt-16 px-6 mb-20 relative'>
                 <div className="radial-bgone hidden lg:block"></div>
-                <div className='text-center mb-14'>
+                <div className='text-center mb-14' id="services">
                     <h3 className='text-offwhite text-3xl md:text-5xl font-bold mb-3'>Nos services</h3>
                     <p className='text-bluish md:text-lg font-normal leading-8'>Découvrez notre gamme de services sur mesure pour répondre à tous vos besoins ! Nous mettons notre savoir-faire à votre disposition pour vous garantir des résultats à la hauteur de vos attentes. </p>
                 </div>

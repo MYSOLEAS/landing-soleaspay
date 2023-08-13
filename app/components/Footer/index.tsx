@@ -17,11 +17,12 @@ const products: ProductType[] = [
   {
     id: 1,
     section: "Liens",
-    link: ['Accueil', 'Tarifs', 'Caracteristiques', 'FAQ'],
+    link: ['Accueil', 'Nos Services', 'Tarifs', 'FAQ'],
   }
 ]
 
 const socialLinks: Social[] = [
+  { imgsrc: '/images/Footer/linkedin.svg', href: "https://linkedin.com/mysoleas"},
   { imgsrc: '/images/Footer/insta.svg', href: "https://instagram.com/mysoleas"},
   { imgsrc: '/images/Footer/twitter.svg', href: "https://twitter.com/mysoleas"},
   { imgsrc: '/images/Footer/youtube.svg', href: "https://youtube.com/mysoleas"},
@@ -61,13 +62,13 @@ const footer = () => {
               <p className="text-white text-xl font-medium mb-9">Resources</p>
               <ul>
                   <li className='mb-5'>
-                    <Link href="#1" className="text-offwhite  text-sm font-normal mb-6 space-links">Accueil</Link>
+                    <Link href="/" className="text-offwhite  text-sm font-normal mb-6 space-links">Accueil</Link>
                   </li>
                   <li className='mb-5'>
-                    <Link href="/home/terms" className="text-offwhite  text-sm font-normal mb-6 space-links">Terms & Conditions</Link>
+                    <Link href="/terms" className="text-offwhite  text-sm font-normal mb-6 space-links">Terms & Conditions</Link>
                   </li>
                   <li className='mb-5'>
-                    <Link href="/home/privacy" className="text-offwhite  text-sm font-normal mb-6 space-links">Privacy Policy</Link>
+                    <Link href="/privacy" className="text-offwhite  text-sm font-normal mb-6 space-links">Privacy Policy</Link>
                   </li>
                 
               </ul>
@@ -77,7 +78,7 @@ const footer = () => {
           <div className="col-span-4">
             <h3 className="text-white text-xl font-medium mb-9">Contact</h3>
             <h4 className="text-offwhite text-sm font-normal mb-6 flex gap-2"><Image src={'/images/Footer/number.svg'} alt="number-icon" width={20} height={20} />(+237) 698 618 200</h4>
-            <h4 className="text-offwhite text-sm font-normal mb-6 flex gap-2"><Image src={'/images/Footer/email.svg'} alt="email-icon" width={20} height={20} />support@mysoleas.com</h4>
+            <h4 className="text-offwhite text-sm font-normal mb-6 flex gap-2"><Image src={'/images/Footer/email.svg'} alt="email-icon" width={20} height={20} /><a href="mailto:support@mysoleas.com">support@mysoleas.com</a></h4>
             <h4 className="text-offwhite text-sm font-normal mb-6 flex gap-2"><Image src={'/images/Footer/address.svg'} alt="address-icon" width={20} height={20} />Kotto Douala</h4>
           </div>
 

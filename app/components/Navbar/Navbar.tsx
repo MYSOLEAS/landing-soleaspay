@@ -13,10 +13,10 @@ interface NavigationItem {
 }
 
 const navigation: NavigationItem[] = [
-    { name: 'Accueil', href: '#1', current: false },
-    { name: 'Tarifs', href: '/home/table', current: false },
-    { name: 'Caracteristiques', href: '#features', current: false },
-    { name: 'FAQ', href: '/home/faq', current: false },
+    { name: 'Accueil', href: '/#', current: false },
+    { name: 'Nos Services', href: '/#services', current: false },
+    { name: 'Tarifs', href: '/pricing', current: false },
+    { name: 'FAQ', href: '/faq', current: false },
 ]
 
 function classNames(...classes: string[]) {
