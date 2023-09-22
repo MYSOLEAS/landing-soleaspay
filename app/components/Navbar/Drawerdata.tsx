@@ -11,6 +11,7 @@ const navigation: NavigationItem[] = [
     { name: 'Accueil', href: '#1', current: false },
     { name: 'Tarifs', href: '/home/table', current: false },
     { name: 'Caracteristiques', href: '#features', current: false },
+    { name: 'Blog', href: '/home/blog', current: false },
     { name: 'FAQ', href: '/home/faq', current: false },
 ]
 

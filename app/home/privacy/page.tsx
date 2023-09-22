@@ -11,7 +11,7 @@ export default function Privacy() {
     <>
       <div className="mx-auto max-w-7xl pt-16 lg:pt-40 sm:pb-24 px-6">
 
-        <div className='height-work'>
+        <div style={{ marginLeft: '1rem', marginRight: '1rem' }}className='height-work '>
           <h2 className="text-4xl lg:text-7xl font-bold mb-5 text-white md:4px  text-center">
           Politique de Confidentialité de SoleasPay
           </h2>

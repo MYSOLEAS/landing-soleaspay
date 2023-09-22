@@ -22,9 +22,10 @@ const products: ProductType[] = [
 ]
 
 const socialLinks: Social[] = [
-  { imgsrc: '/images/Footer/insta.svg', href: "https://instagram.com/mysoleas"},
-  { imgsrc: '/images/Footer/twitter.svg', href: "https://twitter.com/mysoleas"},
-  { imgsrc: '/images/Footer/youtube.svg', href: "https://youtube.com/mysoleas"},
+  { imgsrc: '/images/Footer/linkedin.svg', href: "https://linkedin.com/soleaspay"},
+  { imgsrc: '/images/Footer/insta.svg', href: "https://instagram.com/soleaspay"},
+  { imgsrc: '/images/Footer/twitter.svg', href: "https://twitter.com/soleaspay"},
+  { imgsrc: '/images/Footer/youtube.svg', href: "https://youtube.com/soleaspay"},
 ]
 
 

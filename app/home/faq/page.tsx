@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { Disclosure } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/20/solid';
+import { useEffect } from "react";
 
 interface faqdata {
     heading: string;
@@ -9,14 +10,14 @@ interface faqdata {
 }
 
 const faqdata: faqdata[] = [
-    
+
     {
         heading: "1. Qu\'est ce que Soleaspay ?",
-        subheading: '<code><strong>SoleasPay</strong> est une passerelle de paiement qui aggrège pret de 50 moyens de paiements au cameroun et a l\'étranger afin de permetre aux marchands de recevoir les paiements de leurs clients partout dans le monde.'
+        subheading: '<strong>SoleasPay</strong> est une passerelle de paiement qui aggrège près de 50 moyens de paiements au cameroun et a l\'étranger afin de permetre aux marchands de recevoir les paiements de leurs clients partout dans le monde.'
     },
     {
         heading: "2. A quoi ça sert ?",
-        subheading: 'Soleaspay est utilisé pour : <ul><li>La réception des paiements via des outils comme le qr code ou des liens de paiement;</li><li>L\'achat et la vente des devises et cryptomonnaies;</li><li>La monétisation des sites web, e-commerces et/ou des applications mobile via l\intégration du sopay button ou de l\'API de paiement Soleaspay;</li><li>Le paiement des services utile (airtime, camtel, eneo, camwater et canal plus);</li><li>Le transfert d\'argent entre utilisateurs à moindre coût.'
+        subheading: 'Soleaspay est utilisé pour : <ul><li>- La réception des paiements via des outils comme le qr code ou des liens de paiement;</li><li>- L\'achat et la vente des devises et cryptomonnaies;</li><li>- La monétisation des sites web, e-commerces et/ou des applications mobile via l\intégration du sopay button ou de l\'API de paiement Soleaspay;</li><li>- Le paiement des services utile (Airtime, Camtel, Eneo, Camwater, Netflix et Canal plus);</li><li>- Le transfert d\'argent entre utilisateurs à moindre coût.'
     },
     {
         heading: "3. Qui peut utiliser Soleaspay",
@@ -24,11 +25,11 @@ const faqdata: faqdata[] = [
     },
     {
         heading: "4. Quels sont les types de Compte sur Soleaspay ?",
-        subheading: 'Il existe trois (03) types de comptes sur Soleaspay : <ul><li><strong>Compte personnel</strong>: Il appartient à tout utilisateur Soleaspay. il permet d\'éffectuer ses paiements de biens et services, de transférer de l\'argent à un autre utilisateur Soleaspay;</li><li><strong>Compte Marchant</strong>: Idéal pour les marchands et e-marchands il offre en plus des attributions du compte personnel, la possibilité de générer et distribuer des qr codes et des liens de paiement afin de recevoir l\'argent de leurs clients</li><li><strong>Compte Professionnel</strong>: Indispensable pour les entreprises, il permet d\'intégrer et consommer les APIs de paiement et celle de retrait (PayIn et PayOut)</li></ul>'
+        subheading: 'Il existe trois (03) types de comptes sur Soleaspay : <ul><li><strong>- Compte personnel</strong>: Il appartient à tout utilisateur Soleaspay. il permet d\'éffectuer ses paiements de biens et services, de transférer de l\'argent à un autre utilisateur Soleaspay;</li><li><strong>- Compte Marchant</strong>: Idéal pour les marchands et e-marchands il offre en plus des attributions du compte personnel, la possibilité de générer et distribuer des qr codes et des liens de paiement afin de recevoir l\'argent de leurs clients</li><li><strong>- Compte Professionnel</strong>: Indispensable pour les entreprises, il permet d\'intégrer et consommer les APIs de paiement et celle de retrait (PayIn et PayOut)</li></ul>'
     },
     {
         heading: "5. Comment créer un Compte Soleaspay ?",
-        subheading: 'Il suffit de remplir le formulaire d\'inscription à l\'adresse : <a href="/auth/register"><em>S\'inscrire ici</em></a>.'
+        subheading: 'Il suffit de remplir le formulaire d\'inscription à l\'adresse : <a style="color: #FFA500; text-decoration: underline;" href="/auth/register"><em>S\'inscrire ici</em></a>.'
     },
     {
         heading: "6. Comment activer mon compte Soleaspay ?",
@@ -36,7 +37,7 @@ const faqdata: faqdata[] = [
     },
     {
         heading: "7. J\'ai pas reçu de Mail d\'activation",
-        subheading: 'Si le mail d\'activation ne se retrouve pas même dans votre dossier spam, rendez vous l\'adresse : <a href="/auth/email-activation">Me Renvoyer le mail d\'activation</a>'
+        subheading: 'Si le mail d\'activation ne se retrouve pas même dans votre dossier spam, rendez vous l\'adresse : <a style="color: #FFA500; text-decoration: underline;" href="/auth/email-activation">Me Renvoyer le mail d\'activation</a>'
     },
     {
         heading: "8. C\'est quoi le kyc sur SoleasPay ?",
@@ -44,11 +45,11 @@ const faqdata: faqdata[] = [
     },
     {
         heading: "9. Quelles sont les différente transactions disponible sur Soleaspay ?",
-        subheading: 'Les différentes transactions pouvant être éffectuer sur Soleaspay sont les suivantes : <ul><li>La réception de paiement</li><li>l\'émission des paiements</li><li>L\'achat de crédit de communication</li><li>L\'achat et la vente des devises</li><li>Le transfert d\'argent entre uilisateurs</li></ul>'
+        subheading: 'Les différentes transactions pouvant être éffectuer sur Soleaspay sont les suivantes : <ul><li>- La réception de paiement</li><li>- L\'émission des paiements</li><li>- L\'achat de crédit de communication</li><li>- L\'achat et la vente des devises</li><li>- Le transfert d\'argent entre uilisateurs</li></ul>'
     },
     {
-        heading: "10. Que me coute les services de Soleaspay ?",
-        subheading: 'Chez SoleasPay, nous employons une politique de facturation à la consommation cela dit, vous paierez uniquement lors des transactions pour lesquels l\'argent sort du sopay pour un autre compte. <br> l\'ensemble de nos tarifs est disponible à l\'adresse <a href="/pricing"> Nos Tarifs</a>'
+        heading: "10. Que me coûte les services de Soleaspay ?",
+        subheading: 'Chez SoleasPay, nous employons une politique de facturation à la consommation cela dit, vous paierez uniquement lors des transactions pour lesquels l\'argent sort du sopay pour un autre compte. <br> l\'ensemble de nos tarifs est disponible à l\'adresse <a style="color: #FFA500; text-decoration: underline;" href="/pricing"> Nos Tarifs</a>'
     },
     {
         heading: "11. Y a il des limitation à l\'utilisation de mon compte Soleaspay ?",
@@ -64,7 +65,7 @@ const faqdata: faqdata[] = [
     },
     {
         heading: "14. Comment intégrer Soleaspay à mon projet ?",
-        subheading: 'Vous devez utiliser l\'une des deux integrations disponible sur soleaspay à savoir : <ul><li><strong>Le Sopay Button</strong> : c\'est un widget complet intégrant tous nos moyens de paiement via un script JS</li><li><strong>L\'API Soleaspay</strong>: Pour une utilisation personnalisée, une intégration via notre api est ideal.</li></ul>'
+        subheading: 'Vous devez utiliser l\'une des deux integrations disponible sur soleaspay à savoir : <ul><li><strong>- Le Sopay Button</strong> : c\'est un widget complet intégrant tous nos moyens de paiement via un script JS</li><li><strong>- L\'API Soleaspay</strong>: Pour une utilisation personnalisée, une intégration via notre api est ideal.</li></ul>'
     },
     {
         heading: "15. Quels est le type d\'API de Soleaspay ?",
@@ -72,12 +73,17 @@ const faqdata: faqdata[] = [
     },
     {
         heading: "16. Comment intégrer l\'API Soleaspay ?",
-        subheading: 'Il suffit de suivre la documentation de l\'API disponible à l\'adresse : <a href="https://doc.mysoleas.com/sopay-api">Soleaspay Doc</a>'
+        subheading: 'Il suffit de suivre la documentation de l\'API disponible à l\'adresse : <a style="color: #FFA500; text-decoration: underline;" href="https://doc.mysoleas.com/sopay-api">Soleaspay Doc</a>'
     },
 
 ]
 
 const Faq = () => {
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, []);
+
     return (
         <div className="my-20 px-6" id="faq">
             <h3 className="text-center text-3xl lg:text-5xl font-bold text-offwhite mb-3">Foire Aux Questions</h3>

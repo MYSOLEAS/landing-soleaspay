@@ -36,8 +36,26 @@ html:not([data-scroll="0"]) .navbar {
   border-radius: 10px;
 }
 
+.sendbutton {
+  background: linear-gradient(90deg, #1ceb5e 0%, #4b8cc5 97.15%);
+  border-radius: 10px;
+}
+
+.closebutton {
+  background: linear-gradient(90deg, #eb3b1c 0%, #4b8cc5 97.15%);
+  border-radius: 10px;
+}
+
 .navbutton:hover {
   background: linear-gradient(90deg, #eb711c 0%, #4b8cc5 97.15%);
+}
+
+.sendbutton:hover  {
+  background: linear-gradient(90deg, #1ceb5e 0%, #4b8cc5 97.15%);
+}
+
+.closebutton:hover  {
+  background: linear-gradient(90deg, #eb3b1c 0%, #4b8cc5 97.15%);
 }
 
 .arrowOne {

@@ -12,13 +12,13 @@ export default function Home() {
   return (
     <main>
       <Banner />
-      <Companies />
+      <Faq />
       <Work />
       <Plugin />
       <Features />
       <Simple />
       <Trade />
-      <Faq />
+      <Companies />
       <FloatingWhatsAppButton/>
     </main>
   );

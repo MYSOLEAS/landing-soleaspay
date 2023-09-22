@@ -21,9 +21,11 @@
     "next": "13.4.2",
     "postcss": "8.4.23",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.8.0",
     "react-components": "^0.5.1",
     "react-dom": "18.2.0",
     "react-floating-whatsapp": "^5.0.8",
+    "react-modal": "^3.16.1",
     "react-modal-video": "^2.0.0",
     "react-redux": "^8.1.1",
     "react-slick": "^0.29.0",
@@ -36,6 +38,7 @@
     "urql": "^4.0.4"
   },
   "devDependencies": {
+    "@types/react-modal": "^3.16.0",
     "@types/react-modal-video": "^1.2.0",
     "@types/react-slick": "^0.23.10",
     "next-auth": "^4.22.1"
