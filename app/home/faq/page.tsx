@@ -4,6 +4,7 @@ import { Disclosure } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/20/solid';
 import { useEffect } from "react";
 
+
 interface faqdata {
     heading: string;
     subheading: string;

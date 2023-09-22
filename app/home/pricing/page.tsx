@@ -1,4 +1,10 @@
 import Image from "next/image";
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: 'Pricing on SoleasPay Gateway',
+    description: 'Enjoy with our SoleasPay gateway pricing policy and level up your business',
+  }
 
 interface table {
     index: number;

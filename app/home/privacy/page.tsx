@@ -2,7 +2,7 @@ import React from 'react'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'SoleasPay gateway privacy policy',
+  title: 'SoleasPay Gateway privacy policy',
   description: 'Get touch on SoleasPay gateway privacy policy',
 }
 
