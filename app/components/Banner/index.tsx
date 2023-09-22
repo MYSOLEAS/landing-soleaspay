@@ -17,7 +17,7 @@ const Banner = () => {
     }
 
     return (
-        <div className='bg-image relative' id="1">
+        <div className='bg-image relative' id="web">
             <div className='arrowOne'></div>
             <div className='radial-banner hidden lg:block'></div>
             {/* <ModalVideo channel='youtube' isOpen={isOpen} videoId="" onClose={() => setOpen(false)} /> */}

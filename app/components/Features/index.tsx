@@ -26,7 +26,7 @@ const Features = () => {
             <div className="grid lg:grid-cols-2 gap-x-4 gap-y-4">
                 {/* Column-1 */}
                 <div>
-                    <h3 className="feature-font text-lg font-semibold mb-4 text-center md:text-start">CARACTERISTIQUES</h3>
+                    <h3 className="feature-font text-lg font-semibold mb-4 text-center md:text-start">NOS VALEURS</h3>
                     <h2 className="text-offwhite text-3xl lg:text-5xl font-semibold leading-snug mb-6 text-center md:text-start">Un agrégateur de paiement sur mesure pour une expérience unique</h2>
                 </div>
                 {/* Column-2 */}

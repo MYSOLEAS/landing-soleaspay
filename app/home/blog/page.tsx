@@ -1,11 +1,11 @@
 "use client"
 import React, { useEffect } from 'react'
-import { Metadata } from 'next'
+//import { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'SoleasPay gateway blog',
-  description: 'Get touch on SoleasPay gateway blog',
-}
+//export const metadata: Metadata = {
+//  title: 'SoleasPay gateway blog',
+//  description: 'Get touch on SoleasPay gateway blog',
+//}
 
 interface blogdata {
   id: string;

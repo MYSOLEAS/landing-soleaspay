@@ -22,9 +22,9 @@ const products: ProductType[] = [
 ]
 
 const socialLinks: Social[] = [
-  { imgsrc: '/images/Footer/linkedin.svg', href: "https://linkedin.com/soleaspay"},
+  { imgsrc: '/images/Footer/linkedin.svg', href: "https://www.linkedin.com/showcase/soleaspay"},
   { imgsrc: '/images/Footer/insta.svg', href: "https://instagram.com/soleaspay"},
-  { imgsrc: '/images/Footer/twitter.svg', href: "https://twitter.com/soleaspay"},
+  { imgsrc: '/images/Footer/twitter.svg', href: "https://twitter.com/mysoleas"},
   { imgsrc: '/images/Footer/youtube.svg', href: "https://youtube.com/soleaspay"},
 ]
 
@@ -50,7 +50,7 @@ const footer = () => {
             {/* <h3 className='text-lightblue text-sm font-normal leading-9 mb-4 lg:mb-16'> Simplifiez vos transactions en ligne avec SoleasPay ! Notre solution de paiement sécurisée est rapide et facile a utiliser.</h3> */}
             <div className='flex gap-4'>
               {socialLinks.map((items, i) => (
-                <Link href={items.href} key={i}><Image src={items.imgsrc} alt={items.imgsrc} className='footer-icons' /></Link>
+                <Link href={items.href} key={i} target="_blank"><Image src={items.imgsrc} alt={items.imgsrc} className='footer-icons'/></Link>
               ))}
             </div>
           </div>
@@ -65,6 +65,12 @@ const footer = () => {
                     <Link href="/" className="text-offwhite  text-sm font-normal mb-6 space-links">Accueil</Link>
                   </li>
                   <li className='mb-5'>
+                    <Link href="/pricing" className="text-offwhite  text-sm font-normal mb-6 space-links">Nos Tarifs</Link>
+                  </li>
+                  <li className='mb-5'>
+                    <Link href="/faq" className="text-offwhite  text-sm font-normal mb-6 space-links">FAQ</Link>
+                  </li>
+                  <li className='mb-5'>
                     <Link href="/terms" className="text-offwhite  text-sm font-normal mb-6 space-links">Terms & Conditions</Link>
                   </li>
                   <li className='mb-5'>
@@ -77,8 +83,9 @@ const footer = () => {
 
           <div className="col-span-4">
             <h3 className="text-white text-xl font-medium mb-9">Contact</h3>
-            <h4 className="text-offwhite text-sm font-normal mb-6 flex gap-2"><Image src={'/images/Footer/number.svg'} alt="number-icon" width={20} height={20} />(+237) 698 618 200</h4>
-            <h4 className="text-offwhite text-sm font-normal mb-6 flex gap-2"><Image src={'/images/Footer/email.svg'} alt="email-icon" width={20} height={20} /><a href="mailto:support@mysoleas.com">support@mysoleas.com</a></h4>
+            <h4 className="text-offwhite text-sm font-normal mb-6 flex gap-2"><Image src={'/images/Footer/number.svg'} alt="number-icon" width={20} height={20} /><a href="tel:+237698618200">(+237) 698 618 200</a></h4>
+            <h4 className="text-offwhite text-sm font-normal mb-6 flex gap-2"><Image src={'/images/Footer/number.svg'} alt="number-icon" width={20} height={20} /><a href="tel:+237676411506">(+237) 676 411 506</a></h4>
+            <h4 className="text-offwhite text-sm font-normal mb-6 flex gap-2"><Image src={'/images/Footer/email.svg'} alt="email-icon" width={20} height={20} /><a href="mailto:support@mysoleas.com" target="_blank">support@mysoleas.com</a></h4>
             <h4 className="text-offwhite text-sm font-normal mb-6 flex gap-2"><Image src={'/images/Footer/address.svg'} alt="address-icon" width={20} height={20} />Kotto Douala</h4>
           </div>
 
