@@ -26,7 +26,7 @@ const Simple = () => {
                 typewriter
                   .typeString('<script id="SBScript" type="text/javascript" data-lang=${LANGUE}')
                   .pauseFor(30)
-                  .typeString('<br/>data-apikey=${votre APIKEY} src="https://button.soleaspay.com/main.min.js">')
+                  .typeString('<br/>data-apikey=${votre APIKEY} src="https://btn.soleaspay.com/main.js">')
                   .pauseFor(30)
                   .typeString('<br/><\ /script><br/>')
                   .pauseFor(30)

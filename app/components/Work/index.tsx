@@ -11,8 +11,38 @@ interface workdata {
 const workdata: workdata[] = [
     {
         imgSrc: '/images/Work/envoi-reception.svg',
-        heading: 'ENVOYER ET RECEVOIR',
-        subheading: 'Que vous soyez une boutique en ligne, un marchand ou un simple consommateur,  envoyez et recevez des paiements instantanément sur Soleaspay.',
+        heading: 'PAIEMENT MARCHAND',
+        subheading: 'Que vous soyez une boutique en ligne, un marchand ou un utilisateur lamda,  envoyez et recevez des paiements instantanément depuis votre compte SoleasPay.',
+        hiddenpara: '',
+    },
+    {
+        imgSrc: '/images/Work/facturier.svg',
+        heading: 'E-FACTURIER',
+        subheading: 'Donnez une touche supplémentaire de professionnalisme à vos services en envoyant des factures entièrement personnalisables à vos partenaires en quelques clics seulement.',
+        hiddenpara: '',
+    },
+    {
+        imgSrc: '/images/Work/boutique.svg',
+        heading: 'E-BUSINESS',
+        subheading: 'Creez et managez des boutiques (Articles, clients, commandes et coupons) en ligne dirrectement depuis votre compte SoleasPay et profitez de la puissance qu\'offre le digital pour vos affaires',
+        hiddenpara: '',
+    },
+    {
+        imgSrc: '/images/Work/lien.svg',
+        heading: 'LIENS DE PAIEMENT',
+        subheading: 'Générez gratuitement des liens de paiement pour vendre ou recevoir un paiement instantanément dans votre compte SoleasPay et gérez chacun d\'eux.',
+        hiddenpara: '',
+    },
+    {
+        imgSrc: '/images/Work/marketing.svg',
+        heading: 'MARKETING BOOSTER',
+        subheading: 'Restez en contact permanent avec vos clients et partagez avec eux toutes vos nouveautés à travers des campagnes emails et sms marketing directement depuis votre compte SoleasPay.',
+        hiddenpara: '',
+    },
+    {
+        imgSrc: '/images/Work/qrcode.svg',
+        heading: 'QR CODE',
+        subheading: 'Avec SoleasPay, vous pouvez facilement obtenir un code QR pour recevoir ou effectuer des paiements.',
         hiddenpara: '',
     },
     {
@@ -24,21 +54,10 @@ const workdata: workdata[] = [
     {
         imgSrc: '/images/Work/transfertsopay.svg',
         heading: 'TRANSFERT',
-        subheading: 'Transférez de l\'argent de votre compte Soleaspay à un autre avec des paramètres de sécurité définis par vous ',
+        subheading: 'Transférez de l\'argent de votre compte SoleasPay à un autre avec des paramètres de sécurité définis par vous ',
         hiddenpara: '(direct ou soumis à condition).',
     },
-    {
-        imgSrc: '/images/Work/lien.svg',
-        heading: 'LIENS DE PAIEMENT',
-        subheading: 'Générez gratuitement des liens de paiement pour vendre ou recevoir un paiement instantanément dans votre compte Soleaspay et gérez chacun d\'eux.',
-        hiddenpara: '',
-    },
-    {
-        imgSrc: '/images/Work/qrcode.svg',
-        heading: 'QR CODE',
-        subheading: 'Avec Soleaspay, vous pouvez facilement obtenir un code QR pour recevoir ou effectuer des paiements.',
-        hiddenpara: '',
-    },
+    
     {
         imgSrc: '/images/Work/icon-two.svg',
         heading: 'CARTE VISA VIRTUELLE',
@@ -48,13 +67,13 @@ const workdata: workdata[] = [
     {
         imgSrc: '/images/Work/icon-two.svg',
         heading: 'PAIEMENTS INTERNATIONAUX',
-        subheading: 'Soleaspay vous permet d\'accepter les paiements internationaux par les canaux légaux (Visa, Paypal, etc.)',
+        subheading: 'SoleasPay vous permet d\'accepter les paiements internationaux par les canaux légaux (Visa, Paypal, etc.)',
         hiddenpara: ' pour faciliter la vente de vos services en ligne et promouvoir la notoriété de votre produit à l\'international.',
     },
     {
         imgSrc: '/images/Work/api.svg',
         heading: 'REST APIS',
-        subheading: 'Pour des solutions personnalisées, intégrez facilement et rapidement (une seule fois) tous les moyens de paiement supportés par Soleaspay dans votre projet.',
+        subheading: 'Pour des solutions personnalisées, intégrez facilement et rapidement (une seule fois) tous les moyens de paiement supportés par SoleasPay dans votre projet.',
         hiddenpara: '',
     },
     
