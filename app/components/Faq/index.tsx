@@ -18,6 +18,10 @@ const faqdata: faqdata[] = [
         heading: "Pourquoi opter pour un système de paiement financier ? ",
         subheading: 'Vous avez une entreprise qui vend des produits ou des services et vous vous demandez si vous devez  accepter les paiements en ligne. La réponse est simple : oui, En effet, dans un monde de plus en plus numérique, les consommateurs ont adopté une nouvelle manière de consommer. Les paiements digitaux sont de plus en plus courants et pour les entreprises, il est essentiel d\'offrir cette option de paiement pour ne pas se laisser distancer par la concurrence. Voici les raisons pour lesquelles vous devriez opter pour un système de paiement en ligne pour votre entreprise :<br/><div style="text-align: right;"><a style="color: #FFA500; text-decoration: underline;" href="/home/blog#2">En savoir plus</a></div>'
     },
+    {
+        heading: "Solutions pour les paiements au Cameroun.",
+        subheading: 'Les paiements modernes ont évolué de manière significative en raison de l\'ère numérique. Les solutions de paiement modernes ont remplacé les transactions en espèces traditionnelles. Les entreprises et les particuliers au Cameroun, ainsi que dans d\'autres pays, ont désormais accès à diverses plates-formes de paiement. Nous aborderons cinq solutions de paiement populaires au Cameroun dans cet article de blog.<br/><div style="text-align: right;"><a style="color: #FFA500; text-decoration: underline;" href="/home/blog#3">En savoir plus</a></div>'
+    },
 
 
 ]
