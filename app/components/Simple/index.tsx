@@ -12,8 +12,8 @@ const Simple = () => {
       <div className="simplefour"></div>
       <div className="simplefive"></div>
       <div className="mx-auto max-w-5xl py-24 px-6">
-        <h3 className="text-center text-offwhite text-3xl lg:text-5xl font-semibold mb-6">SoleasPay Button</h3>
-        <p className="text-center text-bluish text-lg font-normal mb-8">L’installation du SOLEASPAY BUTTON se résume à l’insertion des scripts suivants dans votre page web comme suit :</p>
+        <h3 className="text-center text-offwhite text-3xl lg:text-5xl font-semibold mb-6">Pratique pour tout le monde 😎</h3>
+        <p className="text-center text-bluish text-lg font-normal mb-8">L’installation du Bouton de paiement SOLEASPAY tient juste à l’insertion comme suit des scripts suivants dans votre page web</p>
         <div className='grid grid-cols-1 lg:grid-cols-12 my-16'>
           <div className='col-span-7'>
             <Typewriter

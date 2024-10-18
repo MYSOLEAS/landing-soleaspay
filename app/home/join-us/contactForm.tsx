@@ -1,0 +1,174 @@
+"use client";
+import React from 'react'
+import axios from 'axios';
+import Swal from 'sweetalert2';
+
+
+export default function ContactForm() {
+  const [status, setStatus] = React.useState('');
+  const [formData, setFormData] = React.useState({
+    fullName: '',
+    email: '',
+    status: '',
+    interest: '',
+    education: '',
+    desiredPosition: '',
+    experience: '',
+    helpDomain: '',
+    investmentAmount: '',
+    interestInCompany: '',
+    message: ''
+  });
+  
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    try {
+      const response = await axios.post('https://soleaspay.com/api/public/message', formData);
+      
+      if (response.status === 200 && response.data.success) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Merci!',
+          text: 'Votre demande a bien été envoyée.',
+        });
+      } else {
+        throw new Error('Une erreur est survenue');
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Erreur',
+        text: 'Impossible d\'envoyer la demande, veuillez réessayer.',
+      });
+    }
+  };
+  return (
+    <>
+            <form
+              id="join-us-form"
+              action="mailto:contact@mysoleas.com"
+              method="POST"
+              encType="multipart/form-data"
+              className='text-2xl flex-column space-between'
+              onSubmit={handleSubmit}
+            >
+              <div className="form-group mb-3">
+                <label className="text-white" htmlFor="fullName">Nom complet :</label>
+                <input className='form-control' type="text" id="fullName" name="fullName" value={formData.fullName} onChange={handleInputChange} required />
+              </div>
+              <div className="form-group mb-3">
+                <label className="text-white" htmlFor="email">Email :</label>
+                <input className='form-control' type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} required />
+              </div>
+              <div className="form-group mb-3">
+                <label className="text-white" htmlFor="status">Statut désiré :</label>
+                <select id="status" 
+                  className='form-control' 
+                  name="status" 
+                  value={formData.status}
+                  onChange={(e) => {
+                    handleInputChange(e);
+                    setStatus(e.target.value);
+                  }} required>
+                  <option value="">Sélectionnez un statut</option>
+                  <option value="Stagiaire">Stagiaire</option>
+                  <option value="Employé">Employé</option>
+                  <option value="Bénévole">Bénévole</option>
+                  <option value="Investisseur">Investisseur</option>
+                </select>
+              </div>
+              {/* Section spécifique pour stagiaire */}
+              {status === 'Stagiaire' && (
+                <div id="stagiaire-details">
+                  <div className="form-group mb-3">
+                    <label className="text-white" htmlFor="interest">Domaine d'intérêt :</label>
+                    <input className='form-control' type="text" id="interest" name="interest" value={formData.interest} onChange={handleInputChange} required />
+                  </div>
+                  <div className="form-group mb-3">
+                    <label className="text-white" htmlFor="education">Niveau d’études actuel :</label>
+                    <input className='form-control' type="text" id="education" name="education" value={formData.education} onChange={handleInputChange} required/>
+                  </div>
+                </div>
+              )}
+
+              {/* Section spécifique pour employé */}
+              {status === 'Employé' && (
+                <div id="employee-details">
+                  <div className="form-group mb-3">
+                    <label className="text-white" htmlFor="desired-position">Poste souhaité :</label>
+                    <input className='form-control' type="text" id="desired-position" name="desiredPosition" value={formData.desiredPosition} onChange={handleInputChange} required/>
+                  </div>
+                  <div className="form-group mb-3">
+                    <label className="text-white" htmlFor="experience">Expérience professionnelle :</label>
+                    <textarea className='form-control' id="experience" name="experience" value={formData.experience} onChange={handleInputChange} required></textarea>
+                  </div>
+                </div>
+              )}
+
+              {/* Section spécifique pour bénévole */}
+              {status === 'Bénévole' && (
+                <div className="form-group mb-3" id="benevole-details">
+                  <label className="text-white" htmlFor="help-domain">Domaine d’aide :</label>
+                  <input className='form-control' type="text" id="help-domain" name="helpDomain" value={formData.helpDomain} onChange={handleInputChange} required/>
+                </div>
+              )}
+
+              {/* Section spécifique pour investisseur */}
+              {status === 'Investisseur' && (
+                <div id="investor-details">
+                  <div className="form-group mb-3">
+                    <label className="text-white" htmlFor="investment-amount">Montant d'investissement potentiel (en USD):</label>
+                    <input className='form-control' type="text" id="investment-amount" name="investmentAmount" value={formData.investmentAmount} onChange={handleInputChange} required/>
+                  </div>
+                  <div className="form-group mb-3">
+                    <label className="text-white" htmlFor="interest-in-company">Intérêt principal dans l'entreprise :</label>
+                    <textarea className='form-control' id="interest-in-company" name="interestInCompany" value={formData.interestInCompany} onChange={handleInputChange} required></textarea>
+                  </div>
+                </div>
+              )}
+              <div className="form-group mb-3">
+                <label className="text-white" htmlFor="message">Message :</label>
+                <textarea className='form-control' id="message" name="message" value={formData.message} onChange={handleInputChange}></textarea>
+              </div>
+              <div className='text-end'>
+                <button className='btn btn-primary' type="submit">Envoyer</button>
+              </div>
+            </form>
+            
+    <style jsx>
+      {`
+      .form-group {
+        margin-bottom: 1rem;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid #ccc;
+        border-radius: 0.25rem;
+      }
+
+      .btn-primary {
+        background-color: #007bff;
+        color: white;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 0.25rem;
+        cursor: pointer;
+      }
+
+      .btn-primary:hover {
+        background-color: #0056b3;
+      }`
+      }</style>
+    </>
+  )
+}

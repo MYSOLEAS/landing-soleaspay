@@ -6,7 +6,8 @@ const nextConfig = {
     reactStrictMode: true,
     images: {
         //loader: "custom",
-        formats:['image/webp']
+        formats:['image/webp' , 'image/avif'],
+        domains: ['localhost', 'soleaspay.com']
       },
 }
 

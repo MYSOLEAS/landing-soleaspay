@@ -52,9 +52,9 @@ export default class MultipleItems extends Component {
         return (
 
             <div className='text-center bg-lightpink' >
-                <div className="mx-auto max-w-2xl py-16 px-4s sm:px-6 lg:max-w-7xl lg:px-8">
-                    <h3 className='text-offwhite text-3xl md:text-5xl font-bold mb-3'>Nos Plugins</h3>
-                    <p className='text-bluish md:text-lg font-normal leading-8'>Découvrez nos plugins de paiement pour développeurs ! Intégrez facilement des moyens de paiement à votre plateforme et offrez une expérience de paiement fluide à vos utilisateurs. Augmentez votre taux de conversion et boostez votre chiffre d&apos;affaires en quelques clics. Disponibles sur :</p>
+                <div className="mx-auto max-w-2xl py-5 px-4s sm:px-6 lg:max-w-7xl lg:px-8">
+                    <h3 className='text-offwhite text-3xl md:text-5xl font-bold mb-3'>En Plus <s>+</s></h3>
+                    <p className='text-bluish md:text-lg font-normal leading-8'>Découvrez nos differents plugins conçuent pour une intégration facile des moyens de paiements supporté par SoleasPay. <br /> Ils vous permettrons d'offrir une expérience de paiement fluide et securisée à vos clients; d'Augmenter votre taux de conversion et booster votre chiffre d&apos;affaires en quelques clics</p>
                     <Slider {...settings}>
 
                         <div >
@@ -66,7 +66,7 @@ export default class MultipleItems extends Component {
                         </div>
                         <div>
                             <br />
-                            <Image src={"/images/plugins/WP.svg"} alt={"wordpress soleaspay plugin"} width={700} height={50} />
+                            <Link href={"https://fr.wordpress.org/plugins/soleaspay-payment-gateway-for-woocommerce/"}><Image src={"/images/plugins/WP.svg"} alt={"wordpress soleaspay plugin"} width={700} height={50} /></Link>
                         </div>
                         <div>
                             <br />

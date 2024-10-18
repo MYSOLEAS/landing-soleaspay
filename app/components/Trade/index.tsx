@@ -4,7 +4,7 @@ import Image from "next/image";
 const Trade = () => {
     return (
         <div className="mx-auto max-w-7xl mt-48 mb-16 px-6 relative">
-            <div className="radial-bgone hidden lg:block"></div>
+            {/*<div className="radial-bgone hidden lg:block"></div>*/}
 
             <div className="grid lg:grid-cols-2 gap-x-5">
                 {/* Column-1 */}
@@ -15,8 +15,8 @@ const Trade = () => {
                 {/* Column-2 */}
 
                 <div>
-                    <h3 className="text-3xl lg:text-5xl font-semibold text-offwhite mb-6 text-center sm:text-start">Disponible <br /> Sur plusieurs platformes</h3>
-                    <p className="lg:text-lg font-normal text-lightblue mb-16 text-center sm:text-start">Notre application est disponible sur toutes les plateformes, que ce soit iOS, Android ou encore sur le web. Vous pouvez la télécharger et l&apos;utiliser sur votre appareil préféré en quelques clics seulement !</p>
+                    <h3 className="text-3xl lg:text-5xl font-semibold text-offwhite mb-6 sm:text-start"><center>Où <br /> Trouver SoleasPay ? 🧐</center></h3>
+                    <p className="lg:text-lg font-normal text-lightblue mb-16 text-center sm:text-start">SoleasPay est disponible sur toutes les plateformes, que ce soit iOS, Android ou encore sur le web.<br /> Télécharger directement SoleasPay sur votre appareil préféré en quelques clics seulement !</p>
                     <div className="flex justify-between">
                         <Image src={'/images/Trade/mac.svg'} alt="macOS-image" width={61} height={105} />
                         <div className="verticalLine"></div>

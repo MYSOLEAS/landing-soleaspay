@@ -57,15 +57,15 @@ const Banner = () => {
                                 Le compagnon de vos paiements numériques.
                             </h2>
                             <p className='text-white md:text-lg font-normal mb-10 md:text-start text-center'>
-                                Simplifiez vos transactions en toute sécurité avec SoleasPay, votre agrégateur de paiement de confiance et allié pour une gestion financière efficace et transparente.
+                                Simplifiez vos transactions en toute sécurité avec SoleasPay, votre agrégateur de paiement de confiance et votre allié pour une gestion financière éfficace et transparente.
                             </p>
                             <div className='flex align-middle justify-center md:justify-start'>
-                                <button className='text-xl font-semibold text-white py-4 px-6 lg:px-12 navbutton mr-6'><Link href={'https://app.soleaspay.com/auth/login'}>Commencer</Link></button>
-                                <button onClick={() => setOpen(true)} className='bg-transparent flex justify-center items-center text-white'><Image src={'/images/Banner/playbutton.svg'} alt="soleaspay demo button" className='mr-3' width={47} height={47} />Démo</button>
+                                <button className='text-xl font-semibold text-white py-4 px-6 lg:px-12 navbutton mr-6'><Link href={'https://app.soleaspay.com/auth/register'}>Demarrer</Link></button>
+                                <button onClick={() => setOpen(true)} className='bg-transparent flex justify-center items-center text-white'><Image src={'/images/Banner/playbutton.svg'} alt="soleaspay demo button" className='mr-3' width={47} height={47} />Obtenir une Démo</button>
                             </div>
                         </div>
 
-                        <div className='col-span-5 lg:-m-48'>
+                        <div className='col-span-5 lg:-m-20'>
                             <div className='arrowThree'></div>
                             <div className='arrowFour'></div>
                             <div className='arrowFive'></div>

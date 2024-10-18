@@ -11,7 +11,7 @@ const featuresdata: featuresdata[] = [
     {
         imgSrc: '/images/Features/featureOne.svg',
         heading: 'Securité',
-        subheading: 'Nous prenons très au sérieux la sécurité et la confidentialité des données.',
+        subheading: 'SoleasPay prends très au sérieux l\'intégrité, la sécurité et la confidentialité de vos données.',
     },
     {
         imgSrc: '/images/Features/featureTwo.svg',
@@ -26,14 +26,14 @@ const Features = () => {
             <div className="grid lg:grid-cols-2 gap-x-4 gap-y-4">
                 {/* Column-1 */}
                 <div>
-                    <h3 className="feature-font text-lg font-semibold mb-4 text-center md:text-start">NOS VALEURS</h3>
-                    <h2 className="text-offwhite text-3xl lg:text-5xl font-semibold leading-snug mb-6 text-center md:text-start">Un agrégateur de paiement sur mesure pour une expérience unique</h2>
+                    <h3 className="feature-font text-lg font-semibold mb-4 text-center md:text-start">Passez à l'action !</h3>
+                    <h2 className="text-offwhite text-3xl lg:text-5xl font-semibold leading-snug mb-6 text-center md:text-start">Profitez d'un agrégateur de paiement sur mesure qui vous offre une expérience sécurisée, flexible et personnalisée.</h2>
                 </div>
                 {/* Column-2 */}
                 <div>
                     <div style={{
                         marginBottom: "1rem",
-                    }} className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-4 lg:-mr-56">
+                    }} className="grid md:grid-cols-2 lg:grid-cols-2 gap-x-4 gap-y-4 lg:-mr-5">
                         {featuresdata.map((items, i) => (
                             <div className="bg-blue py-10 pr-12 pl-6 rounded-lg" key={i}>
                                 <div className="rounded-full gg h-16 w-16 flex items-center justify-center mb-10">

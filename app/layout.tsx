@@ -7,7 +7,7 @@ import Script from 'next/script';
 
 export const metadata = {
   title: 'SoleasPay Gateway',
-  description: 'SoleasPay, an online payment gateway for every merchand',
+  description: 'SoleasPay, an online payment gateway for merchand and e-merchand',
   manifest : '/manifest.json',
   icons: {
     icon: '/images/Logo/logo.svg',
@@ -37,6 +37,7 @@ export default function RootLayout({
         <Footer />
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-7LCRVFFPN0" />
         <Script src='/tag.js'/>
+        <Script src='/tawk.js'/>
       </body>
     </html>
   )
