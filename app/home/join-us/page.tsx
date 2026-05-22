@@ -38,7 +38,7 @@ export default function JoinUs() {
               </div>              
             </div>
             <div className='mx-auto w-full max-w-5xl rounded-2xl px-6 py-8 mb-5'>
-            <h3 className="text-center font-bold text-3xl lg:text-2xl mb-6 text-offwhite">Soumettre le formulaire suivant pour nous rejoindre</h3>
+            <h3 className="text-center font-bold text-3xl lg:text-2xl mb-6 text-offwhite">Remplissez ce formulaire pour nous rejoindre</h3>
             <ContactForm />
             </div>
       </div>

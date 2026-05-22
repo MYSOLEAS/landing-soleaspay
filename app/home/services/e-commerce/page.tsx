@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title: 'Developper son e-commerce grace à SoleasPay',
@@ -47,7 +46,7 @@ export default function Business() {
       <div className="mx-auto max-w-7xl">            
             <div className={`lg:grid lg:grid-cols-1 lg:gap-10`}>
             <div className="flex justify-center items-center">
-                <Image
+                <img
                   src={`${data[0].image}`}
                   alt={`Image for ${data[0].title}`}
                   width={500}

@@ -30,7 +30,7 @@ export default function Values() {
                 En tant que partenaires, nous avons pour mission de faire grandir votre entreprise et de renforcer la relation avec vos clients, tout en veillant à ce que vous soyez perçu comme un acteur fiable et tourné vers l’avenir.
                 <p >
                 Alors qu'attendez vous ? <br/>
-                  <a href='/join-us'> <span style={{color: "#FFA500"}}
+                  <a href='/home/join-us'> <span style={{color: "#FFA500"}}
                   className="text-start font-bold text-3xl lg:text-2xl text-offwhite"> Rejoignez l'aventure des maintenant et booster votre marque</span></a></p>
                 </p>
               </div>              

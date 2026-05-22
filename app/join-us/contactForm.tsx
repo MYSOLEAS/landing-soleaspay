@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 
 export default function ContactForm() {
   const [status, setStatus] = React.useState('');
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [formData, setFormData] = React.useState({
     fullName: '',
     email: '',
@@ -27,9 +28,24 @@ export default function ContactForm() {
     });
   };
 
+  const resetForm = () => {
+    setFormData({
+      fullName: '',
+      email: '',
+      status: '',
+      interest: '',
+      education: '',
+      desiredPosition: '',
+      experience: '',
+      helpDomain: '',
+      investmentAmount: '',
+      interestInCompany: '',
+      message: ''
+    });
+  };
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+    setIsSubmitting(true);
     try {
       const response = await axios.post('https://soleaspay.com/api/public/message', formData);
       
@@ -39,6 +55,7 @@ export default function ContactForm() {
           title: 'Merci!',
           text: 'Votre demande a bien été envoyée.',
         });
+        resetForm();
       } else {
         throw new Error('Une erreur est survenue');
       }
@@ -48,6 +65,8 @@ export default function ContactForm() {
         title: 'Erreur',
         text: 'Impossible d\'envoyer la demande, veuillez réessayer.',
       });
+    }finally {
+      setIsSubmitting(false)
     }
   };
   return (
@@ -79,14 +98,14 @@ export default function ContactForm() {
                     setStatus(e.target.value);
                   }} required>
                   <option value="">Sélectionnez un statut</option>
-                  <option value="Stagiaire">Stagiaire</option>
-                  <option value="Employé">Employé</option>
-                  <option value="Bénévole">Bénévole</option>
-                  <option value="Investisseur">Investisseur</option>
+                  <option value="intern">Stagiaire</option>
+                  <option value="employee">Employé</option>
+                  <option value="volunteer">Bénévole</option>
+                  <option value="investor">Investisseur</option>
                 </select>
               </div>
               {/* Section spécifique pour stagiaire */}
-              {status === 'Stagiaire' && (
+              {status === 'intern' && (
                 <div id="stagiaire-details">
                   <div className="form-group mb-3">
                     <label className="text-white" htmlFor="interest">Domaine d'intérêt :</label>
@@ -100,7 +119,7 @@ export default function ContactForm() {
               )}
 
               {/* Section spécifique pour employé */}
-              {status === 'Employé' && (
+              {status === 'employee' && (
                 <div id="employee-details">
                   <div className="form-group mb-3">
                     <label className="text-white" htmlFor="desired-position">Poste souhaité :</label>
@@ -114,7 +133,7 @@ export default function ContactForm() {
               )}
 
               {/* Section spécifique pour bénévole */}
-              {status === 'Bénévole' && (
+              {status === 'volunteer' && (
                 <div className="form-group mb-3" id="benevole-details">
                   <label className="text-white" htmlFor="help-domain">Domaine d’aide :</label>
                   <input className='form-control' type="text" id="help-domain" name="helpDomain" value={formData.helpDomain} onChange={handleInputChange} required/>
@@ -122,7 +141,7 @@ export default function ContactForm() {
               )}
 
               {/* Section spécifique pour investisseur */}
-              {status === 'Investisseur' && (
+              {status === 'investor' && (
                 <div id="investor-details">
                   <div className="form-group mb-3">
                     <label className="text-white" htmlFor="investment-amount">Montant d'investissement potentiel (en USD):</label>
@@ -139,7 +158,9 @@ export default function ContactForm() {
                 <textarea className='form-control' id="message" name="message" value={formData.message} onChange={handleInputChange}></textarea>
               </div>
               <div className='text-end'>
-                <button className='btn btn-primary' type="submit">Envoyer</button>
+                <button className='btn btn-primary' type="submit" disabled={isSubmitting}>
+                    {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
+                </button>
               </div>
             </form>
             
@@ -167,7 +188,8 @@ export default function ContactForm() {
 
       .btn-primary:hover {
         background-color: #0056b3;
-      }`
+      }
+     `
       }</style>
     </>
   )

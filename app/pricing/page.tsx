@@ -3,8 +3,8 @@ import { Metadata } from 'next'
 import React from "react";
 import PricingData from "./pricingData";
 export const metadata: Metadata = {
-    title: 'Pricing on SoleasPay Gateway',
-     description: 'Enjoy with our SoleasPay gateway pricing policy and level up your business',
+    title: 'Tarif sur la passerelle SoleasPay',
+     description: 'Profitez de notre politique de tarification de la passerelle SoleasPay et améliorez votre entreprise',
    }
 const Pricing = () => {
     

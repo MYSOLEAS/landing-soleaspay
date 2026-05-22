@@ -38,6 +38,7 @@ export default function RootLayout({
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-7LCRVFFPN0" />
         <Script src='/tag.js'/>
         <Script src='/tawk.js'/>
+        <Script src='/trustpilot.js'/>
       </body>
     </html>
   )

@@ -74,6 +74,21 @@ export default class MultipleItems extends Component {
                         <div>
                             <Image src={"/images/Companies/AF.svg"} alt={"Afriland first bank"} width={300} height={30} />
                         </div>
+                        {/*<div>
+                            <Image src={"/images/Companies/pawapay.svg"} alt={"pawapay"} width={300} height={30} />
+                        </div>
+                        <div>
+                            <img src={"/images/Companies/paydunya.png"} alt={"Paydunya"} width={300} height={30} />
+                        </div>
+                        <div>
+                            <img src={"/images/Companies/flutterwave.png"} alt={"Flutterwave"} className="w-20 h-12" />
+                        </div>
+                        <div>
+                            <img src={"/images/Companies/maplerad.jpeg"} alt={"Maplerad"} className="w-20 h-12" />
+                        </div>
+                        <div>
+                            <img src={"/images/Companies/facebook.jpeg"} alt={"facebook"} width={300} height={30} />
+                        </div>*/}
 
                     </Slider>
                 </div>

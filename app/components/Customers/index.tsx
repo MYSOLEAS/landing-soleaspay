@@ -56,25 +56,43 @@ export default class CustomerItems extends Component {
                     <Slider {...settings}>
 
                         <div>
-                            <Image src={"/images/Companies/OM.svg"} alt={"PayOol"} width={300} height={30} />
+                            <img src={"/images/partners/5.jpg"} alt={"PayOol"} className="w-20 h-12" />
                         </div>
                         <div>
-                            <Image src={"/images/Companies/MTN.svg"} alt={"Open Market"} width={300} height={30} />
+                            <img src={"/images/partners/16.png"} alt={"Open Market"} className="w-20 h-12" />
                         </div>
                         <div>
-                            <Image src={"/images/Companies/PP.svg"} alt={"paypal"} width={300} height={30} />
+                            <img src={"/images/partners/15.jpeg"} alt="shop" className="w-20 h-12" />
                         </div>
                         <div>
-                            <Image src={"/images/Companies/EU.svg"} alt={"Express union mobile"} width={400} height={30} />
+                            <img src={"/images/partners/10.jpg"} alt={"yassa shop"} className="w-20 h-12" />
                         </div>
                         <div>
-                            <br />
-                            <Image src={"/images/Companies/PM.svg"} alt={"perfect money"} width={300} height={30} />
+                            
+                            <img src={"/images/partners/8.png"} alt={"tchopify"} className="w-20 h-12" />
                         </div>
                         <div>
-                            <Image src={"/images/Companies/AF.svg"} alt={"Afriland first bank"} width={300} height={30} />
+                            <img src={"/images/partners/13.png"} alt={"master academy"} className="w-20 h-12" />
                         </div>
-
+                        <div>
+                            <img src={"/images/partners/2.jpg"} alt="shop" className="w-20 h-12" />
+                        </div>
+                        <div>
+                            <img src={"/images/partners/3.jpg"} alt={"yassa shop"} className="w-20 h-12" />
+                        </div>
+                        <div>
+                            
+                            <img src={"/images/partners/11.png"} alt={"tchopify"} className="w-20 h-12" />
+                        </div>
+                        <div>
+                            <img src={"/images/partners/4.png"} alt={"master academy"} className="w-20 h-12" />
+                        </div>
+                        <div>
+                            <img src={"/images/partners/9.jpg"} alt={"master academy"} className="w-20 h-12" />
+                        </div>
+                        <div>
+                            <img src={"/images/partners/12.jpeg"} alt={"master academy"} className="w-20 h-12" />
+                        </div>
                     </Slider>
                 </div>
             </div>

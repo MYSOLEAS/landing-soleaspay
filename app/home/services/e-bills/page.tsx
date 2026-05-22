@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title: 'Facture numerique via SoleasPay',
@@ -49,7 +48,7 @@ export default function Bills() {
             <div className={`lg:grid lg:grid-cols-2 lg:gap-10`}>
               {/* Image */}
               <div className="flex justify-center items-center">
-                <Image
+                <img
                   src={`${data[0].image}`}
                   alt={`Image for ${data[0].title}`}
                   width={500}

@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title: 'Collecter ses paiements via l\'agregateur SoleasPay',
@@ -62,7 +61,7 @@ export default function Payments() {
 
               {/* Image */}
               <div className="flex justify-center items-center">
-                <Image
+                <img
                   src={`${data[0].image}`}
                   alt={`Image for ${data[0].title}`}
                   width={500}
@@ -76,7 +75,7 @@ export default function Payments() {
             <div className={`lg:grid lg:grid-cols-2 lg:gap-10 mt-2`}>
               {/* Image */}
               <div className="flex justify-center items-center">
-                <Image
+                <img
                   src={`${data[1].image}`}
                   alt={`Image for ${data[1].title}`}
                   width={500}
@@ -90,7 +89,7 @@ export default function Payments() {
                   style={{ color: "#FFA500" }}
                   className="text-center font-bold text-3xl lg:text-2xl text-offwhite mb-8"
                 >
-                  {data[0].title}
+                  {data[1].title}
                 </h2>
                 <p
                   className="text-white md:text-lg font-normal mb-10 md:text-start"
@@ -116,7 +115,7 @@ export default function Payments() {
 
               {/* Image */}
               <div className="flex justify-center items-center">
-                <Image
+                <img
                   src={`${data[2].image}`}
                   alt={`Image for ${data[2].title}`}
                   width={500}
