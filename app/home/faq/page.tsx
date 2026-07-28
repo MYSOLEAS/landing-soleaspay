@@ -30,7 +30,7 @@ const faqdata: faqdata[] = [
     },
     {
         heading: "5. Comment créer un Compte Soleaspay ?",
-        subheading: 'Il suffit de remplir le formulaire d\'inscription à l\'adresse : <a style="color: #FFA500; text-decoration: underline;" href="/auth/register"><em>S\'inscrire ici</em></a>.'
+        subheading: 'Il suffit de remplir le formulaire d\'inscription à l\'adresse : <a style="color: var(--sp-primary); text-decoration: underline;" href="/auth/register"><em>S\'inscrire ici</em></a>.'
     },
     {
         heading: "6. Comment activer mon compte Soleaspay ?",
@@ -38,7 +38,7 @@ const faqdata: faqdata[] = [
     },
     {
         heading: "7. J\'ai pas reçu de Mail d\'activation",
-        subheading: 'Si le mail d\'activation ne se retrouve pas même dans votre dossier spam, rendez vous l\'adresse : <a style="color: #FFA500; text-decoration: underline;" href="/auth/email-activation">Me Renvoyer le mail d\'activation</a>'
+        subheading: 'Si le mail d\'activation ne se retrouve pas même dans votre dossier spam, rendez vous l\'adresse : <a style="color: var(--sp-primary); text-decoration: underline;" href="/auth/email-activation">Me Renvoyer le mail d\'activation</a>'
     },
     {
         heading: "8. C\'est quoi le kyc sur SoleasPay ?",
@@ -50,7 +50,7 @@ const faqdata: faqdata[] = [
     },
     {
         heading: "10. Que me coûte les services de Soleaspay ?",
-        subheading: 'Chez SoleasPay, nous employons une politique de facturation à la consommation cela dit, vous paierez uniquement lors des transactions pour lesquels l\'argent sort du sopay pour un autre compte. <br> l\'ensemble de nos tarifs est disponible à l\'adresse <a style="color: #FFA500; text-decoration: underline;" href="/pricing"> Nos Tarifs</a>'
+        subheading: 'Chez SoleasPay, nous employons une politique de facturation à la consommation cela dit, vous paierez uniquement lors des transactions pour lesquels l\'argent sort du sopay pour un autre compte. <br> l\'ensemble de nos tarifs est disponible à l\'adresse <a style="color: var(--sp-primary); text-decoration: underline;" href="/pricing"> Nos Tarifs</a>'
     },
     {
         heading: "11. Y a il des limitation à l\'utilisation de mon compte Soleaspay ?",
@@ -74,7 +74,7 @@ const faqdata: faqdata[] = [
     },
     {
         heading: "16. Comment intégrer l\'API Soleaspay ?",
-        subheading: 'Il suffit de suivre la documentation de l\'API disponible à l\'adresse : <a style="color: #FFA500; text-decoration: underline;" href="https://doc.mysoleas.com/sopay-api">Soleaspay Doc</a>'
+        subheading: 'Il suffit de suivre la documentation de l\'API disponible à l\'adresse : <a style="color: var(--sp-primary); text-decoration: underline;" href="https://doc.mysoleas.com/sopay-api">Soleaspay Doc</a>'
     },
 
 ]
@@ -87,28 +87,28 @@ const Faq = () => {
 
     return (
         <div className="my-20 px-6" id="faq">
-            <h3 className="text-center text-3xl lg:text-5xl font-bold text-offwhite mb-3">Foire Aux Questions</h3>
-            <p className="text-center lg:text-lg font-normal text-bluish">Vous trouverez ici les réponses aux questions les plus fréquemment posées par nos utilisateurs.</p>
+            <h3 className="text-center text-3xl lg:text-5xl font-bold text-ink mb-3">Foire Aux Questions</h3>
+            <p className="text-center lg:text-lg font-normal text-muted">Vous trouverez ici les réponses aux questions les plus fréquemment posées par nos utilisateurs.</p>
 
             <div className="mx-auto max-w-7xl">
-                <div className="grid lg:grid-cols-2">
+                <div className="grid lg:grid-cols-2 gap-x-10">
                     {/* Column-1 */}
                     <div>
                         <div className="w-full px-4 pt-16">
 
                             {faqdata.map((items, i) => (
-                                <div className="mx-auto w-full max-w-5xl rounded-2xl bg-blue py-8 px-6 mb-5" key={i}>
+                                <div className="mx-auto w-full max-w-5xl rounded-2xl bg-white border border-border shadow-[0_4px_14px_rgba(26,35,126,0.05)] py-6 px-6 mb-5" key={i}>
                                     <Disclosure>
                                         {({ open }) => (
                                             <>
-                                                <Disclosure.Button className="flex w-full justify-between rounded-lg text-offwhite sm:px-4 sm:py-2 text-left md:text-2xl font-medium">
+                                                <Disclosure.Button className="flex w-full justify-between items-center rounded-lg text-ink sm:px-2 sm:py-2 text-left md:text-xl font-semibold">
                                                     <span>{items.heading}</span>
                                                     <ChevronUpIcon
                                                         className={`${open ? 'rotate-180 transform' : ''
-                                                            } h-5 w-5 text-purple-500`}
+                                                            } h-5 w-5 text-primary flex-shrink-0`}
                                                     />
                                                 </Disclosure.Button>
-                                                <Disclosure.Panel className="px-4 pt-4 pb-2 md:text-lg text-bluish font-normal opacity-50" dangerouslySetInnerHTML={{ __html: items.subheading }}></Disclosure.Panel>
+                                                <Disclosure.Panel className="px-2 pt-4 pb-2 md:text-base text-muted font-normal" dangerouslySetInnerHTML={{ __html: items.subheading }}></Disclosure.Panel>
                                             </>
                                         )}
                                     </Disclosure>
@@ -119,7 +119,7 @@ const Faq = () => {
                     </div>
 
                     {/* Column-2 */}
-                    <div className="mt-32">
+                    <div className="mt-16 lg:mt-32 hidden lg:block">
                         <Image src={'/images/Faq/faq.svg'} alt="soleaspay faq image" width={941} height={379} />
                     </div>
 

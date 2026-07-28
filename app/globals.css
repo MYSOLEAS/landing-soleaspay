@@ -1,326 +1,474 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
 
+/* =========================================================
+   SoleasPay — Design tokens (moderne, clair, 2026)
+   ========================================================= */
+:root {
+  --sp-primary: #1a237e;                              /* bleu indigo — titres, actions principales */
+  --sp-primary-dark: #0d1240;                          /* indigo plus sombre — dégradés, footer */
+  --sp-secondary: oklch(70.485% 0.18669 47.592);       /* corail chaud — accents, highlights */
+  --sp-tertiary: #6885c1;                              /* bleu ardoise doux — accents secondaires */
+
+  --sp-bg: #ffffff;
+  --sp-surface: #f6f7fb;                               /* blanc légèrement teinté — sections alternées */
+  --sp-surface-2: #eef1f9;
+  --sp-border: #e3e7f2;
+
+  --sp-text: #0f1430;                                  /* quasi-noir navy — titres */
+  --sp-text-muted: #5b6480;                             /* texte courant sur blanc */
+  --sp-text-on-dark: #eef1fb;                           /* texte sur fond sombre (footer, code) */
+  --sp-text-on-dark-muted: #a9b2d6;
+}
+
+* {
+  box-sizing: border-box;
+}
 
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #081a41;
-  /* background-image: linear-gradient(90deg, #BD24DF 0%, #2D6ADE 97.15%); */
-  background-image: linear-gradient(90deg, rgba(91, 190, 248, 0.5) 0%, rgba(45, 106, 222, 0.5) 97.15%);
-  background-blend-mode: overlay;
+  color: var(--sp-text);
+  background-color: var(--sp-bg);
+  background-image: none;
 }
 
 html {
   scroll-behavior: smooth !important;
 }
 
-html:not([data-scroll="0"]) .navbar {
-  position: fixed;
+/* =========================================================
+   Navbar
+   ---------------------------------------------------------
+   Avant : la version fixe dépendait d'un attribut data-scroll
+   mis à jour par un script externe (non fourni), ce qui pouvait
+   créer un décalage/espace au chargement ou tout en haut de page
+   si un "spacer" compensait une hauteur fixe pas encore active.
+   Remplacé par du sticky CSS pur : plus besoin de script,
+   plus de spacer, plus de saut de hauteur.
+   ========================================================= */
+.navbar {
+  position: sticky;
   top: 0;
   width: 100%;
-  background-image: #0c1b44;
-  background-color: #0c1b44;
-  background-blend-mode: overlay;
-  opacity: 1.9;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
-  transition: 0.4s linear;
-  z-index: 40;
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(26, 35, 126, 0.06);
+  border-bottom: 1px solid var(--sp-border);
+  z-index: 50;
 }
 
+/* =========================================================
+   Boutons
+   ========================================================= */
 .navbutton {
-  background: linear-gradient(90deg, #eb711c 0%, #4b8cc5 97.15%);
-  border-radius: 10px;
-}
-
-.sendbutton {
-  background: linear-gradient(90deg, #1ceb5e 0%, #4b8cc5 97.15%);
-  border-radius: 10px;
-}
-
-.closebutton {
-  background: linear-gradient(90deg, #eb3b1c 0%, #4b8cc5 97.15%);
-  border-radius: 10px;
+  background: var(--sp-primary);
+  border-radius: 999px;
+  color: #ffffff;
+  transition: filter .25s ease, transform .25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .navbutton:hover {
-  background: linear-gradient(90deg, #eb711c 0%, #4b8cc5 97.15%);
+  filter: brightness(1.08);
+  transform: translateY(-1px);
 }
 
-.sendbutton:hover  {
-  background: linear-gradient(90deg, #1ceb5e 0%, #4b8cc5 97.15%);
+.btn-outline {
+  border: 1.5px solid var(--sp-border);
+  color: var(--sp-text);
+  border-radius: 999px;
+  background: #fff;
+  transition: border-color .25s ease, color .25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.closebutton:hover  {
-  background: linear-gradient(90deg, #eb3b1c 0%, #4b8cc5 97.15%);
+.btn-outline:hover {
+  border-color: var(--sp-primary);
+  color: var(--sp-primary);
+}
+
+.sendbutton {
+  background: var(--sp-primary);
+  border-radius: 999px;
+  color: #ffffff;
+}
+
+.sendbutton:hover {
+  filter: brightness(1.08);
+}
+
+.closebutton {
+  background: transparent;
+  border: 1.5px solid var(--sp-border);
+  border-radius: 999px;
+  color: var(--sp-text-muted);
+}
+
+.closebutton:hover {
+  border-color: #d64545;
+  color: #d64545;
+}
+
+/* =========================================================
+   Sections
+   ========================================================= */
+.section-alt {
+  background: var(--sp-surface);
+}
+
+.section-dark {
+  background: linear-gradient(150deg, var(--sp-primary) 0%, var(--sp-primary-dark) 100%);
+  color: var(--sp-text-on-dark);
+}
+
+/* =========================================================
+   Bannière — flèches décoratives
+   (recolorées via CSS filter pour matcher la palette claire ;
+   le fichier SVG source reste inchangé)
+   ========================================================= */
+.arrowOne,
+.arrowTwo,
+.arrowThree,
+.arrowFour,
+.arrowFive,
+.arrowSix,
+.arrowSeven,
+.arrowEight,
+.simpleone,
+.simpletwo,
+.simplethree,
+.simplefour,
+.simplefive,
+.simplesix,
+.simpleseven,
+.simpleeight,
+.simplenine,
+.simpleten {
+  position: absolute;
+  background-repeat: no-repeat;
+  z-index: 0;
+  opacity: 0.55;
+  /* neutralise la couleur d'origine (pensée pour fond sombre) et la teinte en indigo doux */
+  filter: brightness(0) saturate(100%) invert(19%) sepia(53%) saturate(2049%) hue-rotate(215deg) brightness(92%) contrast(92%);
 }
 
 .arrowOne {
-  position: absolute;
   bottom: 37%;
   left: 0px;
   background-image: url('/images/Banner/arrowOne.svg');
   width: 105px;
   height: 59px;
-  background-repeat: no-repeat;
-  z-index: -1;
 }
 
 .arrowTwo {
-  position: absolute;
   top: 20%;
   left: 17%;
   background-image: url('/images/Banner/arrowTwo.svg');
   width: 9%;
   height: 100%;
-  background-repeat: no-repeat;
-  z-index: -1;
 }
 
 .arrowThree {
-  position: absolute;
   background-image: url('/images/Banner/arrowThree.svg');
   top: 32%;
   left: 53%;
   width: 9%;
   height: 100%;
-  background-repeat: no-repeat;
-  z-index: -1;
 }
 
 .arrowFour {
-  position: absolute;
   background-image: url('/images/Banner/arrowFour.svg');
   top: 48%;
   left: 46%;
   width: 9%;
   height: 100%;
-  background-repeat: no-repeat;
-  z-index: -1;
 }
 
 .arrowFive {
-  position: absolute;
   background-image: url('/images/Banner/arrowFive.svg');
   top: 61%;
   left: 53%;
   width: 9%;
   height: 100%;
-  background-repeat: no-repeat;
-  z-index: -1;
 }
 
 .arrowSix {
-  position: absolute;
   background-image: url('/images/Banner/arrowSix.svg');
   top: 39%;
   left: 80%;
   width: 9%;
   height: 100%;
-  background-repeat: no-repeat;
-  z-index: -1;
 }
 
 .arrowSeven {
-  position: absolute;
   background-image: url('/images/Banner/arrowSeven.svg');
   top: 57%;
   left: 79%;
   width: 9%;
   height: 100%;
-  background-repeat: no-repeat;
-  z-index: -1;
 }
 
 .arrowEight {
-  position: absolute;
   background-image: url('/images/Banner/arrowEight.svg');
   top: 57%;
   right: 0%;
   width: 9%;
   height: 100%;
-  background-repeat: no-repeat;
-  z-index: -1;
 }
 
-/* Work Section */
-
-.card-b {
-  background: #0C1B44;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-  position: relative;
-  transition: transform 430ms;
-  height: 258px;
-}
-
-.card-b:hover {
-  filter: drop-shadow(0px 20px 5px rgba(0, 0, 0, 0.1));
-  transform: scale(1.05);
-  border: 1px solid #286dd4;
-  height: 360px;
-}
-
-.hides {
-  display: none;
-}
-
-.card-b:hover > .hides {
-  display: block;
-}
-
-.work-img-bg {
-  background: linear-gradient(90deg, #247edf 0%, #2D6ADE 97.15%);
-  top: -51px;
-  right: 40%;
-}
-
-/* Table Section */
-
-.table-b {
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 20px;
-}
-
-/* Feature Section */
-
-.feature-font {
-  background: linear-gradient(90deg, #2478df 0%, #2D6ADE 97.15%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
-
-.gg {
-  background: linear-gradient(90deg, #2075cf 0%, #2D6ADE 97.15%);
-}
-
-/* Simple Section */
-
-.simple-bg {
-  background: linear-gradient(90deg, #0c1b44 0%, #0c1b44 97.15%);
-}
-
+/* =========================================================
+   Section "Simple" — flèches décoratives
+   ========================================================= */
 .simpleone {
-  position: absolute;
   background-image: url('/images/Simple/arrowone.svg');
   top: 57%;
   left: 0%;
   width: 9%;
   height: 100%;
-  background-repeat: no-repeat;
-  z-index: -1;
 }
 
 .simpletwo {
-  position: absolute;
   background-image: url('/images/Simple/arrowtwo.svg');
   top: 15%;
   left: 5%;
   width: 9%;
   height: 100%;
-  background-repeat: no-repeat;
-  z-index: -1;
 }
 
 .simplethree {
-  position: absolute;
   background-image: url('/images/Simple/arrowthree.svg');
   top: 80%;
   left: 8%;
   width: 9%;
   height: 100%;
-  background-repeat: no-repeat;
-  z-index: -1;
 }
 
 .simplefour {
-  position: absolute;
   background-image: url('/images/Simple/arrowfour.svg');
   top: 32%;
   left: 21%;
   width: 9%;
   height: 100%;
-  background-repeat: no-repeat;
-  z-index: -1;
 }
 
 .simplefive {
-  position: absolute;
   background-image: url('/images/Simple/arrowfive.svg');
   top: 84%;
   left: 33%;
   width: 9%;
   height: 100%;
-  background-repeat: no-repeat;
-  z-index: -1;
 }
 
 .simplesix {
-  position: absolute;
   background-image: url('/images/Simple/arrowsix.svg');
   top: 79%;
   left: 63%;
   width: 9%;
   height: 100%;
-  background-repeat: no-repeat;
-  z-index: -1;
 }
 
 .simpleseven {
-  position: absolute;
   background-image: url('/images/Simple/arrowseven.svg');
   top: 47%;
   left: 70%;
   width: 9%;
   height: 100%;
-  background-repeat: no-repeat;
-  z-index: -1;
 }
 
 .simpleeight {
-  position: absolute;
   background-image: url('/images/Simple/arroweight.svg');
   top: 70%;
   left: 78%;
   width: 9%;
   height: 100%;
-  background-repeat: no-repeat;
-  z-index: -1;
 }
 
 .simplenine {
-  position: absolute;
   background-image: url('/images/Simple/arrownine.svg');
   top: 26%;
   left: 82%;
   width: 9%;
   height: 100%;
-  background-repeat: no-repeat;
-  z-index: -1;
 }
 
 .simpleten {
-  position: absolute;
   background-image: url('/images/Simple/arrowten.svg');
   top: 50%;
   right: 0%;
   width: 4%;
   height: 100%;
-  background-repeat: no-repeat;
+}
+
+.simple-bg {
+  background: var(--sp-surface);
+  position: relative;
+}
+
+/* =========================================================
+   Icônes plateformes (Trade) — SVG blancs à la base,
+   reteintés en indigo pour rester visibles sur fond blanc
+   ========================================================= */
+.icon-tint {
+  filter: brightness(0) saturate(100%) invert(19%) sepia(53%) saturate(2049%) hue-rotate(215deg) brightness(92%) contrast(92%);
+}
+
+/* =========================================================
+   Cartes — grille de services
+   ========================================================= */
+.card-b {
+  background: #ffffff;
+  border: 1px solid var(--sp-border);
+  box-shadow: 0px 4px 14px rgba(26, 35, 126, 0.05);
+  border-radius: 20px;
+  position: relative;
+  min-height: 280px;
+  transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
+}
+
+.card-b:hover {
+  box-shadow: 0px 16px 30px rgba(26, 35, 126, 0.10);
+  transform: translateY(-4px);
+  border-color: var(--sp-tertiary);
+}
+
+.work-img-bg {
+  background:  var(--sp-tertiary);
+  top: -28px;
+  right: 40%;
+  box-shadow: 0 10px 24px rgba(26, 35, 126, 0.25);
+}
+
+/* =========================================================
+   Tableau
+   ========================================================= */
+.table-b {
+  box-shadow: 0px 4px 14px rgba(26, 35, 126, 0.06);
+  border: 1px solid var(--sp-border);
+  border-radius: 20px;
+  background: #ffffff;
+}
+
+/* =========================================================
+   Accents de la section Features
+   ========================================================= */
+.feature-font {
+  background: linear-gradient(90deg, var(--sp-primary) 0%, var(--sp-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gg {
+  background: var(--sp-tertiary)
+}
+
+/* =========================================================
+   Fenêtre de code — élément signature de la section intégration
+   ========================================================= */
+.code-window {
+  background: #10142c;
+  border-radius: 16px;
+  box-shadow: 0 30px 60px rgba(15, 20, 48, 0.35);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: left;
+}
+
+.code-window__bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #171b3a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.code-window__dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.code-window__filename {
+  margin-left: 10px;
+  color: #a9b2d6;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+}
+
+.code-window__body {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  line-height: 1.75;
+  padding: 20px 22px;
+  color: #cfd6f6;
+  min-height: 340px;
+  text-align: left;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.typewriter-text {
+  color: #cfd6f6;
+  word-wrap: break-word;
+}
+
+/* =========================================================
+   Halos décoratifs — discrets sur fond blanc
+   ========================================================= */
+.radial-bgone {
+  position: absolute;
+  background: linear-gradient(90deg, var(--sp-tertiary) 0%, var(--sp-primary) 100%);
+  opacity: 0.10;
+  filter: blur(392px);
+  border-radius: 508.5px;
+  width: 51rem;
+  height: 50rem;
+  right: -13%;
+  top: 50%;
+}
+
+.radial-banner {
+  position: absolute;
+  background: linear-gradient(90deg, var(--sp-secondary) 0%, var(--sp-tertiary) 100%);
+  opacity: 0.14;
+  filter: blur(320px);
+  border-radius: 508.5px;
+  width: 60rem;
+  height: 40rem;
+  left: 8%;
+  top: -8%;
+  z-index: -2;
+}
+
+.radial-bg {
+  position: absolute;
+  background: linear-gradient(90deg, var(--sp-primary) 0%, var(--sp-tertiary) 100%);
+  opacity: 0.16;
+  filter: blur(320px);
+  border-radius: 508.5px;
+  width: 45rem;
+  height: 22rem;
+  left: -300px;
+  top: 0%;
   z-index: -1;
 }
 
-
-
+/* =========================================================
+   Divers
+   ========================================================= */
 .hover-underline {
   display: inline-flex;
   position: relative;
-  color: #fff;
   justify-content: center;
   align-items: center;
 }
@@ -331,9 +479,9 @@ html:not([data-scroll="0"]) .navbar {
   width: 100%;
   transform: scaleX(0);
   height: 1px;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
-  background-color: #fff;
+  background-color: currentColor;
   transform-origin: bottom right;
   transition: transform .25s ease-out;
 }
@@ -343,28 +491,30 @@ html:not([data-scroll="0"]) .navbar {
   transform-origin: bottom left;
 }
 
-
 .space-links {
   transition: .3s;
 }
 
 .space-links:hover {
-  letter-spacing: 1px;
+  letter-spacing: .3px;
+  color: #ffffff;
 }
 
 .footer-icons {
-  transition: .5s;
+  transition: .3s;
+  opacity: .85;
 }
 
 .footer-icons:hover {
-  transform: translateY(-8px);
+  transform: translateY(-4px);
+  opacity: 1;
 }
 
 .verticalLine {
   height: 3rem;
-  background: #B4C7ED;
-  opacity: 0.3;
-  width: 2px;
+  background: var(--sp-border);
+  opacity: 1;
+  width: 1.5px;
   margin-top: 20px;
 }
 
@@ -378,58 +528,12 @@ th:last-child {
   border-radius: 0 15px 15px 0;
 }
 
-.radial-bgone {
-  position: absolute;
-  background: linear-gradient(90deg, #247edf 0%, #2D6ADE 97.15%);
-  opacity: 0.5;
-  filter: blur(392px);
-  border-radius: 508.5px;
-  width: 51rem;
-  height: 50rem;
-  right: -13%;
-  top: 50%;
-}
-
-.radial-banner {
-  position: absolute;
-  background: linear-gradient(90deg, #2469df 0%, #2D6ADE 97.15%);
-  opacity: 0.5;
-  filter: blur(392px);
-  border-radius: 508.5px;
-  width: 78rem;
-  height: 50rem;
-  left: 11%;
-  top: -12%;
-  z-index: -2;
-}
-
-.radial-bg {
-  position: absolute;
-  background: linear-gradient(90deg, #2472df 0%, #2D6ADE 97.15%);
-  opacity: 1.5;
-  filter: blur(392px);
-  border-radius: 508.5px;
-  width: 51rem;
-  height: 25rem;
-  left: -383px;
-  top: 0%;
-  z-index: -1;
-}
-
 select {
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
 }
 
-.typewriter-text {
-  color: #e9833b;
-  word-wrap: break-word;
-}
-
-
-
 Image {
-  
   object-fit: contain;
 }

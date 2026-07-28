@@ -23,6 +23,20 @@ module.exports = {
       'red': '#c92a8f',
       'lightblue': '#8A9BCA',
       'blue': '#0C1B44',
+
+      // ---- Nouveaux tokens — refonte "moderne clair 2026" ----
+      // Ajoutés sans toucher aux tokens ci-dessus pour ne pas casser
+      // les pages pas encore migrées (Services, Pricing, Blog, etc.)
+      'primary': '#1a237e',                              // bleu indigo — titres, CTA
+      'primary-dark': '#10154d',                          // indigo foncé — dégradés, footer
+      'secondary': 'oklch(70.485% 0.18669 47.592)',        // corail chaud — accents
+      'tertiary': '#6885c1',                               // bleu ardoise — accents secondaires
+      'surface': '#f6f7fb',                                // blanc teinté — sections alternées
+      'surface-2': '#eef1f9',
+      'border': '#e3e7f2',
+      'ink': '#0f1430',                                    // texte titres sur fond clair
+      'muted': '#5b6480',                                  // texte courant sur fond clair
+      'inverse-muted': '#c7cdec',                          // texte secondaire sur fond sombre (footer)
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],

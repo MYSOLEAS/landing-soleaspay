@@ -3,7 +3,6 @@ import Image from "next/image";
 import React, { Component } from "react";
 import Slider from "react-slick";
 
-
 // CAROUSEL SETTINGS
 export default class MultipleItems extends Component {
     render() {
@@ -49,51 +48,31 @@ export default class MultipleItems extends Component {
         };
 
         return (
-
-            <div className='text-center bg-lightpink' >
-                <div className="mx-auto max-w-2xl py-16 px-4s sm:px-6 lg:max-w-7xl lg:px-8">
-                    <h3 className='text-offwhite text-3xl md:text-5xl font-bold mb-3'>Des partenariats solides et strategiques</h3>
+            <div className='text-center py-16 bg-white'>
+                <div className="mx-auto max-w-2xl px-4s sm:px-6 lg:max-w-7xl lg:px-8">
+                    <h3 className='text-ink text-3xl md:text-5xl font-bold mb-10'>Des partenariats solides et strategiques</h3>
                     <Slider {...settings}>
-
-                        <div>
-                            <Image src={"/images/Companies/OM.svg"} alt={"Orange Money"} width={300} height={30} />
+                        <div className="px-6 flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity">
+                            <Image src={"/images/Companies/OM.svg"} alt={"Orange Money"} width={140} height={30} />
                         </div>
-                        <div>
-                            <Image src={"/images/Companies/MTN.svg"} alt={"MTN mobile money"} width={300} height={30} />
+                        <div className="px-6 flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity">
+                            <Image src={"/images/Companies/MTN.svg"} alt={"MTN mobile money"} width={140} height={30} />
                         </div>
-                        <div>
-                            <Image src={"/images/Companies/PP.svg"} alt={"paypal"} width={300} height={30} />
+                        <div className="px-6 flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity">
+                            <Image src={"/images/Companies/PP.svg"} alt={"paypal"} width={140} height={30} />
                         </div>
-                        <div>
-                            <Image src={"/images/Companies/EU.svg"} alt={"Express union mobile"} width={400} height={30} />
+                        <div className="px-6 flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity">
+                            <Image src={"/images/Companies/EU.svg"} alt={"Express union mobile"} width={160} height={30} />
                         </div>
-                        <div>
-                            <br />
-                            <Image src={"/images/Companies/PM.svg"} alt={"perfect money"} width={300} height={30} />
+                        <div className="px-6 flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity">
+                            <Image src={"/images/Companies/PM.svg"} alt={"perfect money"} width={140} height={30} />
                         </div>
-                        <div>
-                            <Image src={"/images/Companies/AF.svg"} alt={"Afriland first bank"} width={300} height={30} />
+                        <div className="px-6 flex items-center justify-center opacity-80 hover:opacity-100 transition-opacity">
+                            <Image src={"/images/Companies/AF.svg"} alt={"Afriland first bank"} width={140} height={30} />
                         </div>
-                        {/*<div>
-                            <Image src={"/images/Companies/pawapay.svg"} alt={"pawapay"} width={300} height={30} />
-                        </div>
-                        <div>
-                            <img src={"/images/Companies/paydunya.png"} alt={"Paydunya"} width={300} height={30} />
-                        </div>
-                        <div>
-                            <img src={"/images/Companies/flutterwave.png"} alt={"Flutterwave"} className="w-20 h-12" />
-                        </div>
-                        <div>
-                            <img src={"/images/Companies/maplerad.jpeg"} alt={"Maplerad"} className="w-20 h-12" />
-                        </div>
-                        <div>
-                            <img src={"/images/Companies/facebook.jpeg"} alt={"facebook"} width={300} height={30} />
-                        </div>*/}
-
                     </Slider>
                 </div>
             </div>
-
         )
     }
 }

@@ -20,7 +20,7 @@ export default function ContactForm() {
     interestInCompany: '',
     message: ''
   });
-  
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
@@ -47,8 +47,8 @@ export default function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      const response = await axios.post('https://soleaspay.com/api/public/message', formData);
-      
+      const response = await axios.post('http://localhost:8080/api/public/message', formData);
+
       if (response.status === 200 && response.data.success) {
         Swal.fire({
           icon: 'success',
@@ -76,22 +76,22 @@ export default function ContactForm() {
               action="mailto:contact@mysoleas.com"
               method="POST"
               encType="multipart/form-data"
-              className='text-2xl flex-column space-between'
+              className='text-base flex-column space-between'
               onSubmit={handleSubmit}
             >
               <div className="form-group mb-3">
-                <label className="text-white" htmlFor="fullName">Nom complet :</label>
+                <label className="text-ink" htmlFor="fullName">Nom complet :</label>
                 <input className='form-control' type="text" id="fullName" name="fullName" value={formData.fullName} onChange={handleInputChange} required />
               </div>
               <div className="form-group mb-3">
-                <label className="text-white" htmlFor="email">Email :</label>
+                <label className="text-ink" htmlFor="email">Email :</label>
                 <input className='form-control' type="email" id="email" name="email" value={formData.email} onChange={handleInputChange} required />
               </div>
               <div className="form-group mb-3">
-                <label className="text-white" htmlFor="status">Statut désiré :</label>
-                <select id="status" 
-                  className='form-control' 
-                  name="status" 
+                <label className="text-ink" htmlFor="status">Statut désiré :</label>
+                <select id="status"
+                  className='form-control'
+                  name="status"
                   value={formData.status}
                   onChange={(e) => {
                     handleInputChange(e);
@@ -108,11 +108,11 @@ export default function ContactForm() {
               {status === 'intern' && (
                 <div id="stagiaire-details">
                   <div className="form-group mb-3">
-                    <label className="text-white" htmlFor="interest">Domaine d'intérêt :</label>
+                    <label className="text-ink" htmlFor="interest">Domaine d'intérêt :</label>
                     <input className='form-control' type="text" id="interest" name="interest" value={formData.interest} onChange={handleInputChange} required />
                   </div>
                   <div className="form-group mb-3">
-                    <label className="text-white" htmlFor="education">Niveau d’études actuel :</label>
+                    <label className="text-ink" htmlFor="education">Niveau d’études actuel :</label>
                     <input className='form-control' type="text" id="education" name="education" value={formData.education} onChange={handleInputChange} required/>
                   </div>
                 </div>
@@ -122,11 +122,11 @@ export default function ContactForm() {
               {status === 'employee' && (
                 <div id="employee-details">
                   <div className="form-group mb-3">
-                    <label className="text-white" htmlFor="desired-position">Poste souhaité :</label>
+                    <label className="text-ink" htmlFor="desired-position">Poste souhaité :</label>
                     <input className='form-control' type="text" id="desired-position" name="desiredPosition" value={formData.desiredPosition} onChange={handleInputChange} required/>
                   </div>
                   <div className="form-group mb-3">
-                    <label className="text-white" htmlFor="experience">Expérience professionnelle :</label>
+                    <label className="text-ink" htmlFor="experience">Expérience professionnelle :</label>
                     <textarea className='form-control' id="experience" name="experience" value={formData.experience} onChange={handleInputChange} required></textarea>
                   </div>
                 </div>
@@ -135,7 +135,7 @@ export default function ContactForm() {
               {/* Section spécifique pour bénévole */}
               {status === 'volunteer' && (
                 <div className="form-group mb-3" id="benevole-details">
-                  <label className="text-white" htmlFor="help-domain">Domaine d’aide :</label>
+                  <label className="text-ink" htmlFor="help-domain">Domaine d’aide :</label>
                   <input className='form-control' type="text" id="help-domain" name="helpDomain" value={formData.helpDomain} onChange={handleInputChange} required/>
                 </div>
               )}
@@ -144,26 +144,26 @@ export default function ContactForm() {
               {status === 'investor' && (
                 <div id="investor-details">
                   <div className="form-group mb-3">
-                    <label className="text-white" htmlFor="investment-amount">Montant d'investissement potentiel (en USD):</label>
+                    <label className="text-ink" htmlFor="investment-amount">Montant d'investissement potentiel (en USD):</label>
                     <input className='form-control' type="text" id="investment-amount" name="investmentAmount" value={formData.investmentAmount} onChange={handleInputChange} required/>
                   </div>
                   <div className="form-group mb-3">
-                    <label className="text-white" htmlFor="interest-in-company">Intérêt principal dans l'entreprise :</label>
+                    <label className="text-ink" htmlFor="interest-in-company">Intérêt principal dans l'entreprise :</label>
                     <textarea className='form-control' id="interest-in-company" name="interestInCompany" value={formData.interestInCompany} onChange={handleInputChange} required></textarea>
                   </div>
                 </div>
               )}
               <div className="form-group mb-3">
-                <label className="text-white" htmlFor="message">Message :</label>
+                <label className="text-ink" htmlFor="message">Message :</label>
                 <textarea className='form-control' id="message" name="message" value={formData.message} onChange={handleInputChange}></textarea>
               </div>
               <div className='text-end'>
-                <button className='btn btn-primary' type="submit" disabled={isSubmitting}>
+                <button className='navbutton px-8 py-3 font-semibold' type="submit" disabled={isSubmitting}>
                     {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
                 </button>
               </div>
             </form>
-            
+
     <style jsx>
       {`
       .form-group {
@@ -172,22 +172,17 @@ export default function ContactForm() {
 
       .form-control {
         width: 100%;
-        padding: 0.5rem;
-        border: 1px solid #ccc;
-        border-radius: 0.25rem;
+        padding: 0.65rem 0.9rem;
+        border: 1.5px solid var(--sp-border);
+        border-radius: 0.6rem;
+        background: #ffffff;
+        color: var(--sp-text);
+        transition: border-color .2s ease;
       }
 
-      .btn-primary {
-        background-color: #007bff;
-        color: white;
-        padding: 0.5rem 1rem;
-        border: none;
-        border-radius: 0.25rem;
-        cursor: pointer;
-      }
-
-      .btn-primary:hover {
-        background-color: #0056b3;
+      .form-control:focus {
+        outline: none;
+        border-color: var(--sp-primary);
       }
      `
       }</style>

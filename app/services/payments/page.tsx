@@ -39,22 +39,21 @@ export default function Payments() {
 
   return (
     <div className="mx-auto max-w-7xl my-20 px-6" id="payments">
-      <h1  className="text-center text-3xl lg:text-5xl font-bold text-offwhite mb-7">
+      <h1  className="text-center text-3xl lg:text-5xl font-bold text-ink mb-7">
         Emettre et recevoir des paiements
       </h1>
-      <p className='text-white py-5 px-5'>SoleasPay met à votre disposition une panoplie de solutions de paiement modernes, conçues pour répondre aux besoins variés des marchands et de leurs clients. Vous pouvez accepter les paiements via des méthodes simples et sécurisées comme le QR code, le lien de paiement, ou encore intégrer notre bouton et formulaire de paiement directement sur votre site. Notre service d'e-facturier simplifie la gestion de vos factures, et pour une flexibilité maximale, notre API vous permet d'intégrer facilement toutes ces options dans vos systèmes existants.</p>
+      <p className='text-muted py-5 px-5'>SoleasPay met à votre disposition une panoplie de solutions de paiement modernes, conçues pour répondre aux besoins variés des marchands et de leurs clients. Vous pouvez accepter les paiements via des méthodes simples et sécurisées comme le QR code, le lien de paiement, ou encore intégrer notre bouton et formulaire de paiement directement sur votre site. Notre service d'e-facturier simplifie la gestion de vos factures, et pour une flexibilité maximale, notre API vous permet d'intégrer facilement toutes ces options dans vos systèmes existants.</p>
       <div className="mx-auto max-w-7xl">
             <div className={`lg:grid lg:grid-cols-2 lg:gap-10`}>
               {/* Texte */}
               <div className="mx-auto w-full max-w-5xl rounded-2xl py-8 px-6 mb-5 flex flex-col justify-center">
                 <h2
-                  style={{ color: "#FFA500" }}
-                  className="text-center font-bold text-3xl lg:text-2xl text-offwhite mb-8"
+                  className="text-center font-bold text-3xl lg:text-2xl text-primary mb-8"
                 >
                   {data[0].title}
                 </h2>
                 <p
-                  className="text-white md:text-lg font-normal mb-10 md:text-start"
+                  className="text-muted md:text-lg font-normal mb-10 md:text-start"
                   dangerouslySetInnerHTML={{ __html: data[0].description }}
                 ></p>
               </div>
@@ -66,12 +65,12 @@ export default function Payments() {
                   alt={`Image for ${data[0].title}`}
                   width={500}
                   height={300}
-                  className="rounded-lg"
+                  className="rounded-lg border border-border shadow-[0_4px_14px_rgba(26,35,126,0.06)]"
                 />
               </div>
             </div>
-      
-            
+
+
             <div className={`lg:grid lg:grid-cols-2 lg:gap-10 mt-2`}>
               {/* Image */}
               <div className="flex justify-center items-center">
@@ -80,35 +79,33 @@ export default function Payments() {
                   alt={`Image for ${data[1].title}`}
                   width={500}
                   height={300}
-                  className="rounded-lg"
+                  className="rounded-lg border border-border shadow-[0_4px_14px_rgba(26,35,126,0.06)]"
                 />
               </div>
               {/* Texte */}
               <div className="mx-auto w-full max-w-5xl rounded-2xl py-8 px-6 mb-5 flex flex-col justify-center">
                 <h2
-                  style={{ color: "#FFA500" }}
-                  className="text-center font-bold text-3xl lg:text-2xl text-offwhite mb-8"
+                  className="text-center font-bold text-3xl lg:text-2xl text-primary mb-8"
                 >
                   {data[1].title}
                 </h2>
                 <p
-                  className="text-white md:text-lg font-normal mb-10 md:text-start"
+                  className="text-muted md:text-lg font-normal mb-10 md:text-start"
                   dangerouslySetInnerHTML={{ __html: data[1].description }}
                 ></p>
               </div>
-              
+
             </div>
             <div className={`lg:grid lg:grid-cols-2 lg:gap-10`}>
               {/* Texte */}
               <div className="mx-auto w-full max-w-5xl rounded-2xl py-8 px-6 mb-5 flex flex-col justify-center">
                 <h2
-                  style={{ color: "#FFA500" }}
-                  className="text-center font-bold text-3xl lg:text-2xl text-offwhite mb-8"
+                  className="text-center font-bold text-3xl lg:text-2xl text-primary mb-8"
                 >
                   {data[2].title}
                 </h2>
                 <p
-                  className="text-white md:text-lg font-normal mb-10 md:text-start"
+                  className="text-muted md:text-lg font-normal mb-10 md:text-start"
                   dangerouslySetInnerHTML={{ __html: data[2].description }}
                 ></p>
               </div>
@@ -120,7 +117,7 @@ export default function Payments() {
                   alt={`Image for ${data[2].title}`}
                   width={500}
                   height={300}
-                  className="rounded-lg"
+                  className="rounded-lg border border-border shadow-[0_4px_14px_rgba(26,35,126,0.06)]"
                 />
               </div>
             </div>

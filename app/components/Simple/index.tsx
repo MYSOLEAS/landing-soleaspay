@@ -1,91 +1,86 @@
 "use client";
-import Image from 'next/image';
 import Typewriter from 'typewriter-effect';
 
 const Simple = () => {
 
   return (
-    <div className="simple-bg relative sm:block sm:mx-auto">
-      <div className="simpleone"></div>
-      <div className="simpletwo"></div>
-      <div className="simplethree"></div>
-      <div className="simplefour"></div>
-      <div className="simplefive"></div>
-      <div className="mx-auto max-w-5xl py-24 px-6">
-        <h3 className="text-center text-offwhite text-3xl lg:text-5xl font-semibold mb-6">Pratique pour tout le monde 😎</h3>
-        <p className="text-center text-bluish text-lg font-normal mb-8">L’installation du Bouton de paiement SOLEASPAY tient juste à l’insertion comme suit des scripts suivants dans votre page web</p>
-        <div className='grid grid-cols-1 lg:grid-cols-12 my-16'>
-          <div className='col-span-7'>
+    <div className="simple-bg relative sm:block sm:mx-auto py-24">
+      <div className="simpleone hidden lg:block"></div>
+      <div className="simpletwo hidden lg:block"></div>
+      <div className="simplethree hidden lg:block"></div>
+      <div className="mx-auto max-w-6xl px-6">
+        <h3 className="text-center text-ink text-3xl lg:text-5xl font-semibold mb-6">Pratique pour tout le monde 😎</h3>
+        <p className="text-center text-muted text-lg font-normal mb-14 max-w-2xl mx-auto">L’installation du Bouton de paiement SOLEASPAY tient juste à l’insertion comme suit des scripts suivants dans votre page web</p>
+
+        <div className="code-window max-w-3xl mx-auto">
+          <div className="code-window__bar">
+            <span className="code-window__dot" style={{ background: '#ff5f57' }}></span>
+            <span className="code-window__dot" style={{ background: '#febc2e' }}></span>
+            <span className="code-window__dot" style={{ background: '#28c840' }}></span>
+            <span className="code-window__filename">integration.html</span>
+          </div>
+          <div className="code-window__body">
             <Typewriter
               options={{
-                loop:true,
-                delay: 30,
+                loop: true,
+                delay: 25,
                 wrapperClassName: 'typewriter-text',
               }}
               onInit={(typewriter) => {
                 typewriter
-                  .typeString('<script id="SBScript" type="text/javascript" data-lang=${LANGUE}')
+                  .typeString('&lt;script id="SBScript" type="text/javascript" data-lang=${LANGUE}')
                   .pauseFor(30)
-                  .typeString('<br/>data-apikey=${votre APIKEY} src="https://btn.soleaspay.com/main.js">')
+                  .typeString('<br/>data-apikey=${votre APIKEY} src="https://btn.soleaspay.com/main.js"&gt;')
                   .pauseFor(30)
-                  .typeString('<br/><\ /script><br/>')
+                  .typeString('<br/>&lt;/script&gt;<br/>')
                   .pauseFor(30)
-                  .typeString('<br/><\ script type=\ "text/javascript\ "><br/>')
+                  .typeString('<br/>&lt;script type="text/javascript"&gt;<br/>')
                   .pauseFor(30)
                   .typeString('<br/>const options = {')
                   .pauseFor(30)
-                  .typeString('<br/>btnTitle : "Pay",')
+                  .typeString('<br/>&nbsp;&nbsp;btnTitle: "Pay",')
                   .pauseFor(30)
-                  .typeString('<br/>amount : 25,')
+                  .typeString('<br/>&nbsp;&nbsp;amount: 25,')
                   .pauseFor(30)
-                  .typeString('<br/>currency : "USD",')
+                  .typeString('<br/>&nbsp;&nbsp;currency: "USD",')
                   .pauseFor(30)
-                  .typeString('<br/>orderId : "MLS00000025F",')
+                  .typeString('<br/>&nbsp;&nbsp;orderId: "MLS00000025F",')
                   .pauseFor(30)
-                  .typeString('<br/>description : "Test sopay button payment ",')
+                  .typeString('<br/>&nbsp;&nbsp;description: "Test sopay button payment",')
                   .pauseFor(30)
-                  .typeString('<br/>businessName : "Shop Name",')
+                  .typeString('<br/>&nbsp;&nbsp;businessName: "Shop Name",')
                   .pauseFor(30)
-                  .typeString('<br/>loadInvoice : true,')
+                  .typeString('<br/>&nbsp;&nbsp;loadInvoice: true,')
                   .pauseFor(30)
-                  .typeString('<br/>successUrl : "https://yourdomain.com/receivePayment",')
+                  .typeString('<br/>&nbsp;&nbsp;successUrl: "https://yourdomain.com/receivePayment",')
                   .pauseFor(30)
-                  .typeString('<br/>mode : "BILLING" OR "TIPING"')
+                  .typeString('<br/>&nbsp;&nbsp;mode: "BILLING" // ou "TIPING"')
                   .pauseFor(30)
                   .typeString('<br/>}<br/>')
                   .pauseFor(30)
-                  .typeString('<br/>function initButton(){')
+                  .typeString('<br/>function initButton() {')
                   .pauseFor(30)
-                  .typeString('<br/>return SopayButton.pay(options)')
+                  .typeString('<br/>&nbsp;&nbsp;return SopayButton.pay(options)')
                   .pauseFor(30)
-                  .typeString('<br/>.then((res)=>console.log(res))')
+                  .typeString('<br/>&nbsp;&nbsp;&nbsp;&nbsp;.then((res) =&gt; console.log(res))')
                   .pauseFor(30)
-                  .typeString('<br/>.catch((err)=>console.log(err))')
+                  .typeString('<br/>&nbsp;&nbsp;&nbsp;&nbsp;.catch((err) =&gt; console.log(err))')
                   .pauseFor(30)
-                  .typeString('<br/>.finally(initButton)')
+                  .typeString('<br/>&nbsp;&nbsp;&nbsp;&nbsp;.finally(initButton)')
                   .pauseFor(30)
                   .typeString('<br/>}<br/>')
                   .pauseFor(30)
                   .typeString('<br/>initButton()<br/>')
                   .pauseFor(30)
-                  .typeString('<br/><\ /script>')
+                  .typeString('<br/>&lt;/script&gt;')
                   .pauseFor(3000)
                   .deleteAll()
                   .start();
               }}
             />
           </div>
-          <div className='col-span-5 lg:-m-45  flex justify-center items-center mt-50' style={{marginTop: '1px'}}>
-            <br />
-            <Image
-              src='/images/Simple/phonesoleaspay.svg'
-              alt='bannerphone'
-              width={1013}
-              height={760}
-              layout='intrinsic'
-            />
-          </div>
         </div>
+
       </div>
     </div>
   );

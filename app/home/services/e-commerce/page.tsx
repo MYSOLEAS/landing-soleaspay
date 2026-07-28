@@ -17,8 +17,8 @@ const data: data[] = [
   {
     id: "1",
     title: "",
-    description: 'SoleasPay propose une solution complète et innovante pour les entrepreneurs souhaitant se lancer dans le e-commerce avec <strong>l’e-Business</strong>, un module permettant de créer une boutique en ligne entièrement personnalisable en quelques clics. Ce service ne se contente pas de faciliter la création d’une boutique : il est conçu pour offrir une <strong>expérience de vente fluide et professionnelle</strong>, adaptée aux besoins spécifiques de chaque entreprise.<br /><br /> <span style="color:#FFA500"><strong>Pourquoi choisir l’e-Business de SoleasPay ?</strong></span> <br /><br/> 1. <strong>Création simple et rapide</strong> : En quelques clics, vous pouvez configurer et personnaliser votre boutique, ajouter des produits et ajuster les paramètres pour refléter l\'identité de votre marque. <br /><br /> 2. <strong>Personnalisation complète</strong> : Chaque aspect de la boutique est modifiable, de l\'apparence générale jusqu’aux descriptions de produits, garantissant une boutique qui se distingue. <br /><br/>3. <strong>Gestion centralisée</strong> : Toutes vos transactions sont intégrées à la plateforme SoleasPay, offrant une vue d’ensemble de vos paiements, commandes et rapports financiers, le tout en un seul endroit. <br/><br/>4. <strong>Intégration avec MyShup</strong> : Pour maximiser votre visibilité, la boutique que vous créez via SoleasPay est également intégrée à <strong>MyShup</strong>, une application dédiée à la distribution de produits et services. Cette application vous permet d’élargir votre portée en touchant de nouveaux clients au-delà de votre réseau habituel. Vous pouvez découvrir davantage sur MyShup en visitant <a href="https://myshup.biz">le site de myshup.biz</a>.<br /><br/> <span style="color:#FFA500"><strong>Concrètement, comment cela vous aide ?</strong></span> <br /><br/>Avec <strong>SoleasPay e-Business</strong>, vous n’avez pas besoin de compétences techniques poussées pour entrer dans le monde du commerce en ligne. L’interface intuitive et l’accompagnement proposé vous permettent de démarrer rapidement. Que vous soyez un entrepreneur en quête de nouveaux canaux de vente ou un commerçant cherchant à moderniser son activité, SoleasPay offre une solution sur mesure.<br/><br/> <strong>Prêt à passer à l\'action ?</strong> Inscrivez-vous dès aujourd\'hui sur <a href="https://app.soleaspay.com/auth/register">SoleasPay</a> et lancez votre boutique en ligne pour commencer à vendre sans plus attendre. SoleasPay vous accompagne à chaque étape de votre transformation digitale ! <br/><br/>Ce service est un véritable atout pour quiconque veut <strong>accélérer sa croissance dans le e-commerce</strong> et répondre aux attentes des consommateurs d\'aujourd\'hui, à la recherche de <strong>flexibilité, de sécurité et d\'accessibilité</strong.',
-    image: '/images/Services/e-business.webp'
+    description: 'SoleasPay propose une API robuste et polyvalente pour les développeurs, leur permettant d\'intégrer facilement nos services dans leurs propres applications ou plateformes. Voici un aperçu des services accessibles via notre API, ainsi que les avantages qu\'elle offre aux développeurs : <br/><br/> <strong>* Encaissement de paiements :</strong> Grâce à l\'API de SoleasPay, vous pouvez intégrer des solutions de paiement rapides et sécurisées dans vos applications. Que vous développiez un site e-commerce, une application mobile ou un service en ligne, SoleasPay vous permet de recevoir des paiements par diverses méthodes comme les QR codes, les liens de paiement ou encore les formulaires personnalisés. Cela réduit la complexité liée à la gestion des transactions et garantit une expérience fluide pour vos utilisateurs.<br /><br /><strong>* Revente de cartes virtuelles :</strong> L\'API de SoleasPay permet également de revendre des cartes Visa virtuelles. En utilisant SoleasPay, vous pouvez créer, gérer et revendre des cartes, offrant ainsi à vos clients un moyen sécurisé et flexible de faire des achats en ligne. Les cartes étant en dollars, cela aide à mieux contrôler les dépenses.<br/><br/><strong>* Création instantanée de boutiques e-commerce :</strong> SoleasPay permet aux développeurs de créer des boutiques en ligne entièrement personnalisables en quelques clics via l\'API. Cela offre une opportunité aux entreprises et aux particuliers de lancer leur activité en ligne rapidement, sans tracas techniques.<br/> MyShup, notre application de distribution, permet également de rendre les produits visibles et accessibles à un large public.<br/><br/><span style="color:var(--sp-primary)"><strong>Pourquoi intégrer notre API ?</strong></span><br/><br/><strong>* Facilité d\'intégration :</strong> Notre documentation est claire et complète, avec des exemples de code, des guides pas-à-pas, et une API RESTful bien conçue pour simplifier l\'intégration. Accédez à notre documentation complète à l\'adresse suivante : <a style="color: var(--sp-primary); text-decoration: underline;" href="https://developper.mysoleas.com">htttps://developper.mysoleas.com</a>.<br/><br/><strong>* Sécurité et fiabilité :</strong> Nos API sont sécurisées et suivent les normes de l\'industrie pour protéger vos données et ceux de vos utilisateurs, assurant ainsi la conformité avec les régulations en vigueur.<br/><br/><strong>* Flexibilité et scalabilité :</strong> Que vous soyez une startup ou une entreprise établie, SoleasPay vous permet d\'adapter facilement vos services et d\'évoluer en fonction de la demande de votre marché.<br /><br />Avec l\'API SoleasPay, vous accédez à des services complets, à une documentation intuitive, et à une équipe de support technique prête à vous accompagner dans votre intégration.',
+    image: '/images/Services/developer.webp'
   },
   {
     id: "2",
@@ -39,11 +39,11 @@ export default function Business() {
 
   return (
     <div className="mx-auto max-w-7xl my-20 px-6" id="e-business">
-      <h1  className="text-center text-3xl lg:text-5xl font-bold text-offwhite mb-7">
-        L'E-Commerce By SoleasPay
+      <h1  className="text-center text-3xl lg:text-5xl font-bold text-ink mb-7">
+        SoleasPay pour les developpeurs
       </h1>
-      
-      <div className="mx-auto max-w-7xl">            
+
+      <div className="mx-auto max-w-7xl">
             <div className={`lg:grid lg:grid-cols-1 lg:gap-10`}>
             <div className="flex justify-center items-center">
                 <img
@@ -51,24 +51,23 @@ export default function Business() {
                   alt={`Image for ${data[0].title}`}
                   width={500}
                   height={300}
-                  className="rounded-lg"
+                  className="rounded-lg border border-border shadow-[0_4px_14px_rgba(26,35,126,0.06)]"
                 />
               </div>
               {/* Texte */}
               <div className="mx-auto w-full max-w-5xl rounded-2xl py-8 px-6 mb-5 flex flex-col justify-center">
                 <h2
-                  style={{ color: "#FFA500" }}
-                  className="text-center font-bold text-3xl lg:text-2xl text-offwhite"
+                  className="text-center font-bold text-3xl lg:text-2xl text-primary"
                 >
                   {data[0].title}
                 </h2>
                 <p
-                  className="text-white md:text-lg font-normal mb-10 md:text-start"
+                  className="text-muted md:text-lg font-normal mb-10 md:text-start"
                   dangerouslySetInnerHTML={{ __html: data[0].description }}
                 ></p>
-              </div>              
+              </div>
             </div>
-            
+
       </div>
     </div>
   )

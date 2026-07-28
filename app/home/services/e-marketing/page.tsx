@@ -39,23 +39,22 @@ export default function Marketing() {
 
   return (
     <div className="mx-auto max-w-7xl my-20 px-6" id="payments">
-      <h1  className="text-center text-3xl lg:text-5xl font-bold text-offwhite mb-7">
+      <h1  className="text-center text-3xl lg:text-5xl font-bold text-ink mb-7">
         Le Marketing Booster
       </h1>
-      <p className='text-center text-white py-2 px-5'>Boostez votre activités et optimisez vos revenues </p>
-      <div className="mx-auto max-w-7xl">            
+      <p className='text-center text-muted py-2 px-5'>Boostez votre activités et optimisez vos revenues </p>
+      <div className="mx-auto max-w-7xl">
             <div className={`lg:grid lg:grid-cols-2 lg:gap-10`}>
-              
+
               {/* Texte */}
               <div className="mx-auto w-full max-w-5xl rounded-2xl py-8 px-6 mb-5 flex flex-col justify-center">
                 <h2
-                  style={{ color: "#FFA500" }}
-                  className="text-center font-bold text-3xl lg:text-2xl text-offwhite mb-8"
+                  className="text-center font-bold text-3xl lg:text-2xl text-primary mb-8"
                 >
                   {data[0].title}
                 </h2>
                 <p
-                  className="text-white md:text-lg font-normal mb-10 md:text-start"
+                  className="text-muted md:text-lg font-normal mb-10 md:text-start"
                   dangerouslySetInnerHTML={{ __html: data[0].description }}
                 ></p>
               </div>
@@ -66,11 +65,11 @@ export default function Marketing() {
                   alt={`Image for ${data[0].title}`}
                   width={500}
                   height={300}
-                  className="rounded-lg"
+                  className="rounded-lg border border-border shadow-[0_4px_14px_rgba(26,35,126,0.06)]"
                 />
               </div>
             </div>
-            
+
       </div>
     </div>
   )
