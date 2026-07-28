@@ -39,7 +39,7 @@ export default function Business() {
 
   return (
     <div className="mx-auto max-w-7xl my-20 px-6" id="e-business">
-      <h1  className="text-center text-3xl lg:text-5xl font-bold text-offwhite mb-7">
+      <h1  className="text-center text-3xl lg:text-5xl font-bold text-ink mb-7">
         SoleasPay pour les developpeurs
       </h1>
       
@@ -57,13 +57,13 @@ export default function Business() {
               {/* Texte */}
               <div className="mx-auto w-full max-w-5xl rounded-2xl py-8 px-6 mb-5 flex flex-col justify-center">
                 <h2
-                  style={{ color: "#FFA500" }}
-                  className="text-center font-bold text-3xl lg:text-2xl text-offwhite"
+                  
+                  className="text-center font-bold text-3xl lg:text-2xl text-secondary"
                 >
                   {data[0].title}
                 </h2>
                 <p
-                  className="text-white md:text-lg font-normal mb-10 md:text-start"
+                  className="text-muted md:text-lg font-normal mb-10 md:text-start"
                   dangerouslySetInnerHTML={{ __html: data[0].description }}
                 ></p>
               </div>              
