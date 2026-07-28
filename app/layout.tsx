@@ -3,6 +3,7 @@ import '@/node_modules/react-modal-video/scss/modal-video.scss';
 import Navbar from './components/Navbar/index';
 import Footer from './components/Footer/index';
 import Script from 'next/script';
+import AnnouncementBar from './components/AnnouncementBar';
 
 
 export const metadata = {
@@ -32,6 +33,7 @@ export default function RootLayout({
           />
       </head>
       <body>
+        <AnnouncementBar/>
         <Navbar />
         {children}
         <Footer />
