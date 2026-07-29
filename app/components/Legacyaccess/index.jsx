@@ -11,7 +11,7 @@ const LegacyAccess = () => {
                     </div>
 
                     <div className="flex-1">
-                        <h3 className="text-xl font-semibold text-ink mb-2">Vous utilisez encore l&apos;ancienne version SoleasPay ?</h3>
+                        <h3 className="text-xl font-semibold text-ink mb-2">Vous utilisez encore l&apos;ancienne version de SoleasPay ?</h3>
                         <p className="text-muted leading-relaxed">
                             Vous pouvez continuer à y accéder pendant la transition.{' '}
                             <span className="font-semibold text-ink">Elle cessera de fonctionner le 30 août 2027.</span>{' '}
@@ -29,7 +29,7 @@ const LegacyAccess = () => {
                             Ancienne version <ArrowTopRightOnSquareIcon className="h-4 w-4" />
                         </a>
                         <Link
-                            href="https://app.soleaspay.com/auth/register"
+                            href="https://business.soleaspay.com/forgot-password"
                             className="navbutton font-semibold px-6 py-3 inline-flex items-center justify-center"
                         >
                             Activer mon compte
