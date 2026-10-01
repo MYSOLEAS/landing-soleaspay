@@ -1,5 +1,7 @@
 "use client";
 import Typewriter from 'typewriter-effect';
+import Link from 'next/link';
+import { companyInfo } from '../../config/company';
 
 const Simple = () => {
 
@@ -10,7 +12,16 @@ const Simple = () => {
       <div className="simplethree hidden lg:block"></div>
       <div className="mx-auto max-w-6xl px-6">
         <h3 className="text-center text-ink text-3xl lg:text-5xl font-semibold mb-6">Pratique pour tout le monde 😎</h3>
-        <p className="text-center text-muted text-lg font-normal mb-14 max-w-2xl mx-auto">L’installation du Bouton de paiement SOLEASPAY tient juste à l’insertion comme suit des scripts suivants dans votre page web</p>
+        <p className="text-center text-muted text-lg font-normal mb-10 max-w-2xl mx-auto">L’installation du Bouton de paiement SOLEASPAY tient juste à l’insertion comme suit des scripts suivants dans votre page web</p>
+        <div className="flex justify-center mb-12">
+          <Link
+            href={companyInfo.documentationUrl}
+            target="_blank"
+            className="btn-outline px-6 py-3 font-semibold"
+          >
+            Explorer la documentation
+          </Link>
+        </div>
 
         <div className="code-window max-w-3xl mx-auto">
           <div className="code-window__bar">

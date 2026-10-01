@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/index';
 import Footer from './components/Footer/index';
 import Script from 'next/script';
 import AnnouncementBar from './components/AnnouncementBar';
+import { I18nProvider } from './i18n/I18nProvider';
 
 
 export const metadata = {
@@ -11,7 +12,7 @@ export const metadata = {
   description: 'SoleasPay, an online payment gateway for merchand and e-merchand',
   manifest : '/manifest.json',
   icons: {
-    icon: '/images/Logo/logo.svg',
+    icon: '/home/images/Logo/logo.svg',
   },
 }
 
@@ -33,10 +34,12 @@ export default function RootLayout({
           />
       </head>
       <body>
-        <AnnouncementBar/>
-        <Navbar />
-        {children}
-        <Footer />
+        <I18nProvider>
+          <AnnouncementBar/>
+          <Navbar />
+          {children}
+          <Footer />
+        </I18nProvider>
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-7LCRVFFPN0" />
         <Script src='/tag.js'/>
         <Script src='/tawk.js'/>

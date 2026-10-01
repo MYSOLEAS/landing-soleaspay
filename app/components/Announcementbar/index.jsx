@@ -12,7 +12,7 @@ const AnnouncementBar = () => {
     <div className="relative bg-gradient-to-r from-primary to-tertiary text-white">
       <div className="mx-auto max-w-7xl px-6 py-2.5 flex items-center justify-center gap-3 text-sm">
         <span className="pill bg-white/15 text-white font-semibold shrink-0">
-          Nouveau
+          Infos
         </span>
         <p className="text-center leading-tight">
           <span className="font-medium">Nouvelle API disponible</span>

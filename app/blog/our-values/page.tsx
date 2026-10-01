@@ -4,7 +4,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "SoleasPay un partenaire de choix pour votre croissance",
   description:
-    "Garantissez la croissance et la notorité de votre marque grace à des partenariat solide et qui vous valorise telle SoleasPay",
+    "Renforcez la croissance et la notorité de votre marque grace à des partenariats solides et valorisants comme SoleasPay",
 };
 export default function Values() {
   return (
@@ -30,12 +30,11 @@ export default function Values() {
                 SoleasPay devient un atout stratégique pour renforcer la
                 crédibilité et le standing de votre entreprise. Grâce à notre
                 expertise dans les services de paiement et les solutions
-                fintech, vous offrez à vos clients un niveau de sécurité
-                inégalé, un confort d’utilisation optimal, et des produits
+                fintech, vous offrez à vos clients des outils conçus pour
+                renforcer la sécurité, le confort d’utilisation, et des produits
                 sur-mesure qui répondent aux besoins d’un marché en constante
-                évolution. Cela inspire confiance à vos clients, en leur
-                garantissant que chaque transaction est traitée avec le plus
-                grand soin.
+                évolution. Cela inspire confiance à vos clients, en montrant
+                que chaque transaction est suivie avec attention.
               </p>
               <p className="text-muted md:text-lg font-normal mb-10 md:text-start">
                 Collaborer avec SoleasPay, c’est aussi choisir une technologie

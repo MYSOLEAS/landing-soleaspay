@@ -14,7 +14,7 @@ const faqdata: faqdata[] = [
 
     {
         heading: "1. Qu\'est ce que Soleaspay ?",
-        subheading: '<strong>SoleasPay</strong> est une passerelle de paiement qui aggrège près de 50 moyens de paiements au cameroun et a l\'étranger afin de permetre aux marchands de recevoir les paiements de leurs clients partout dans le monde.'
+        subheading: '<strong>SoleasPay</strong> est une passerelle de paiement qui agrège plusieurs moyens de paiement au Cameroun et, selon les marchés et partenaires supportés, à l\'étranger afin de permettre aux marchands de recevoir les paiements de leurs clients.'
     },
     {
         heading: "2. A quoi ça sert ?",
@@ -62,7 +62,7 @@ const faqdata: faqdata[] = [
     },
     {
         heading: "13. Y a il des frais supplementaire à l\'utilisation de Soleaspay ?",
-        subheading: 'Non, il n\'y a pas de frais supplementaire pour l\'exploitation d\'un compte soleaspay.'
+        subheading: 'Les frais applicables peuvent dépendre du type de compte, de la transaction, du marchand, du moyen de paiement et des conditions communiquées par SoleasPay.'
     },
     {
         heading: "14. Comment intégrer Soleaspay à mon projet ?",
@@ -120,7 +120,7 @@ const Faq = () => {
 
                     {/* Column-2 */}
                     <div className="mt-16 lg:mt-32 hidden lg:block">
-                        <Image src={'/images/Faq/faq.svg'} alt="soleaspay faq image" width={941} height={379} />
+                        <Image src={'/home/images/Faq/faq.svg'} alt="soleaspay faq image" width={941} height={379} />
                     </div>
 
                 </div>

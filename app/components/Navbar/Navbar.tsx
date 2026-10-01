@@ -4,6 +4,7 @@ import React from "react";
 import { Bars3Icon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import Drawer from "./Drawer";
 import Drawerdata from "./Drawerdata";
+import LanguageSwitcher from "../LanguageSwitcher";
 
 interface NavigationItem {
   name: string;
@@ -15,6 +16,8 @@ const navigation: NavigationItem[] = [
   { name: "Accueil", href: "/", current: false },
   { name: "Nos Services", href: "#", current: false },
   { name: "Tarifs", href: "/pricing", current: false },
+  { name: "À propos", href: "/about", current: false },
+  { name: "Contact", href: "/contact", current: false },
   { name: "Nous rejoindre", href: "/join-us", current: false },
   { name: "FAQ", href: "/faq", current: false },
 ];
@@ -57,7 +60,7 @@ const Navbar = () => {
                                     Sur navbar blanche il faudra une variante foncée du logo — sopay-dark.png ci-dessous
                                     est un nom d'exemple, à remplacer par ton vrai fichier. */}
                 <img
-                  src={"/images/Logo/sopay.png"}
+                  src={"/home/images/Logo/sopay.png"}
                   alt="soleaspay"
                   width={80}
                 />
@@ -111,6 +114,14 @@ const Navbar = () => {
                                 E-Facturier
                               </Link>
                             </li>
+                            <li
+                              className="services"
+                              onClick={toggleServicesMenu}
+                            >
+                              <Link href={"/services/e-commerce"}>
+                                E-Commerce
+                              </Link>
+                            </li>
                             
                             <li
                               className="services"
@@ -118,6 +129,14 @@ const Navbar = () => {
                             >
                               <Link href={"/services/e-marketing"}>
                                 E-Marketing
+                              </Link>
+                            </li>
+                            <li
+                              className="services"
+                              onClick={toggleServicesMenu}
+                            >
+                              <Link href={"/services/virtual-cards"}>
+                                Carte virtuelle
                               </Link>
                             </li>
                             
@@ -153,6 +172,7 @@ const Navbar = () => {
               </div>
 
               <div className="hidden lg:flex items-center gap-3">
+                <LanguageSwitcher />
                 <Link
                   href={"https://business.soleaspay.com/login"}
                   className="btn-outline text-base font-semibold py-3 px-6"

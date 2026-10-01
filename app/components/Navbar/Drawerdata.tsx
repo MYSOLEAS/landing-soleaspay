@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 
@@ -15,8 +17,19 @@ const navigation: NavigationItem[] = [
     { name: 'Accueil', href: '/', current: false },
     { name: 'Nos Services', href: '#', current: false },
     { name: 'Tarifs', href: '/pricing', current: false },
+    { name: 'À propos', href: '/about', current: false },
+    { name: 'Contact', href: '/contact', current: false },
     { name: 'Nous rejoindre', href: '/join-us', current: false },
     { name: 'FAQ', href: '/faq', current: false },
+]
+
+const serviceLinks = [
+    { name: 'Paiement', href: '/services/payments' },
+    { name: 'E-Facturier', href: '/services/e-bills' },
+    { name: 'E-Commerce', href: '/services/e-commerce' },
+    { name: 'E-Marketing', href: '/services/e-marketing' },
+    { name: 'Carte virtuelle', href: '/services/virtual-cards' },
+    { name: 'Developpeurs', href: '/services/developers' },
 ]
 
 function classNames(...classes: string[]) {
@@ -24,15 +37,9 @@ function classNames(...classes: string[]) {
 }
 
 const Drawerdata: React.FC<DrawerDataProps> = ({setIsOpen}) => {
-  const [isServiceOpen, setIsServiceOpen] = React.useState(false);
   const serviceMenuRef = React.useRef<HTMLDivElement | null>(null);
-  // Toggle service dropdown
-  const handleServiceClick = () => {
-    setIsServiceOpen((prev) => !prev);
-  };
 
   const handleServiceCloseDrawer = () => {
-    setIsServiceOpen((prev) => !prev);
     setIsOpen(false)
   };
 
@@ -44,7 +51,7 @@ const Drawerdata: React.FC<DrawerDataProps> = ({setIsOpen}) => {
   React.useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (serviceMenuRef.current && !serviceMenuRef.current.contains(event.target as Node)) {
-        setIsServiceOpen(false);
+        serviceMenuRef.current.querySelector("details")?.removeAttribute("open");
       }
     };
     
@@ -54,60 +61,67 @@ const Drawerdata: React.FC<DrawerDataProps> = ({setIsOpen}) => {
     };
   }, []);
     return (
-        <div className="rounded-md max-w-sm w-full">
-            <div className="flex-1 space-y-4 py-1">
-                <div className="sm:block">
-                    <div className="space-y-1 px-5 pt-2 pb-3">
-                        {navigation.map((item, index) => (
-                            index == 1 
-                            ? 
-                            <li className={classNames(
-                                item.current ? 'bg-gray-900 text-purple' : 'text-black hover:bg-gray-700 hover:text-purple',
-                                    'block  py-2 rounded-md text-base font-medium'
+        <div className="flex h-full w-full flex-col">
+            <nav className="flex-1 overflow-y-auto px-5 pt-3" aria-label="Menu mobile">
+                <div className="divide-y divide-border">
+                    {navigation.map((item, index) => (
+                        index == 1
+                        ?
+                        <div
+                            key={item.name}
+                            ref={serviceMenuRef}
+                            className="mobile-drawer-item"
+                            aria-current={item.current ? 'page' : undefined}
+                        >
+                            <details className="group">
+                                <summary className="flex w-full cursor-pointer list-none items-center justify-between py-4 text-left text-base font-semibold text-ink [&::-webkit-details-marker]:hidden">
+                                    <span>{item.name}</span>
+                                    <span className="text-lg leading-none text-primary transition-transform group-open:rotate-180" aria-hidden="true">⌄</span>
+                                </summary>
+                                <ul className='mb-3 rounded-2xl border border-border bg-surface px-3 py-2 text-sm text-ink'>
+                                    {serviceLinks.map((service) => (
+                                        <li key={service.href} onClick={handleServiceCloseDrawer}>
+                                            <Link className="block rounded-xl px-3 py-2.5 font-medium text-ink hover:bg-white hover:text-primary" href={service.href}>
+                                                {service.name}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </details>
+                        </div>
+                        :
+                        <Link
+                            key={item.name}
+                            href={item.href}
+                            onClick={handleCloseDrawer}
+                            className={classNames(
+                                item.current ? 'text-primary' : 'text-ink hover:text-primary',
+                                'mobile-drawer-item flex items-center justify-between py-4 text-base font-semibold'
                             )}
                             aria-current={item.current ? 'page' : undefined}
-                             style={{ cursor: 'pointer', background: 'none', border: 'none' }}
-                             onClick={handleServiceClick}
-                            >
-                            {item.name} {isServiceOpen ? '▲' : '▼'}
-                            {isServiceOpen && (
-                            
-                                <ul className='dropdown-menu px-5'>
-                                    <li className='services my-2' onClick={handleServiceCloseDrawer}><Link href={'/services/payments'}>* Paiement</Link></li>
-                                    <li className='services my-2' onClick={handleServiceCloseDrawer}><Link href={'/services/e-bills'}>* E-Facturier</Link></li>
-                                    <li className='services my-2' onClick={handleServiceCloseDrawer}><Link href={'/services/e-commerce'}>* E-Commerce</Link></li>
-                                    <li className='services my-2' onClick={handleServiceCloseDrawer}><Link href={'/services/e-marketing'}>* E-Marketing</Link></li>
-                                    <li className='services my-2' onClick={handleServiceCloseDrawer}><Link href={'/services/virtual-cards'}>* Carte virtuelle</Link></li>
-                                    <li className='services my-2' onClick={handleServiceCloseDrawer}><Link href={'/services/developers'}>* Developpeurs</Link></li>
-                                </ul>
-                            )}
-                            </li>
-                            :
-                            <Link
-                                key={item.name}
-                                href={item.href}
-                                onClick={handleCloseDrawer}
-                                className={classNames(
-                                    item.current ? 'bg-gray-900 text-purple' : 'text-black hover:bg-gray-700 hover:text-purple',
-                                    'block  py-2 rounded-md text-base font-medium'
-                                )}
-                                aria-current={item.current ? 'page' : undefined}
-                            >
-                                {item.name}
-                            </Link>
-                        ))}
-                        <div className="mt-4"></div>
-                        <button className="bg-navyblue w-full hover:text-white text-white border border-purple font-medium py-2 px-4 rounded">
-                            <Link href={'https://app.soleaspay.com/auth/login'}>
-                                Se Connecter
-                            </Link>
-                        </button>
-                        <button className="bg-navyblue w-full hover:text-white text-white border border-purple font-medium py-2 px-4 rounded">
-                            <Link href={'https://app.soleaspay.com/auth/register'}>
-                                S'inscrire
-                            </Link>
-                        </button>
-                    </div>
+                        >
+                            <span>{item.name}</span>
+                        </Link>
+                    ))}
+                </div>
+            </nav>
+
+            <div className="border-t border-border bg-white px-5 pb-6 pt-4">
+                <div className="grid gap-3">
+                    <Link
+                        href={'https://app.soleaspay.com/auth/login'}
+                        onClick={handleCloseDrawer}
+                        className="mobile-drawer-cta mobile-drawer-cta--secondary"
+                    >
+                        Se Connecter
+                    </Link>
+                    <Link
+                        href={'https://app.soleaspay.com/auth/register'}
+                        onClick={handleCloseDrawer}
+                        className="mobile-drawer-cta mobile-drawer-cta--primary"
+                    >
+                        S'inscrire
+                    </Link>
                 </div>
             </div>
         </div>

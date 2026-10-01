@@ -77,36 +77,42 @@ const Banner = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 my-8 items-center">
             <div className="col-span-7">
               <span className="hidden md:inline-block feature-font text-sm font-semibold uppercase tracking-wide mb-4">
-                Agrégateur de paiement
+                Infrastructure de paiement
               </span>
               <h2 className="text-4xl lg:text-6xl font-bold mb-5 leading-tight text-ink md:text-start text-center">
-                Le compagnon de vos paiements numériques.
+                Une seule integration. Plusieurs facons de vous faire payer.
               </h2>
               <p className="text-muted md:text-lg font-normal mb-10 md:text-start text-center max-w-xl">
-                Simplifiez vos transactions en toute sécurité avec SoleasPay,
-                votre agrégateur de paiement de confiance et votre allié pour
-                une gestion financière éfficace et transparente.
+                Connectez votre entreprise aux moyens de paiement adaptes a vos
+                marches depuis une infrastructure concue pour les marchands,
+                plateformes et equipes techniques.
               </p>
               <div className="flex flex-wrap gap-4 items-center justify-center md:justify-start">
                 <Link
                   href={"https://business.soleaspay.com"}
                   className="text-lg font-semibold text-white py-4 px-8 navbutton"
                 >
-                  Demarrer
+                  Commencer
+                </Link>
+                <Link
+                  href={"#payment-infrastructure"}
+                  className="btn-outline text-lg font-semibold py-4 px-8"
+                >
+                  Decouvrir SoleasPay
                 </Link>
                 <button
                   onClick={() => setOpen(true)}
-                  className="btn-outline flex items-center justify-center gap-3 text-ink py-4 px-8 font-semibold"
+                  className="text-primary flex items-center justify-center gap-2 py-3 px-2 font-semibold hover:underline"
                 >
-                  <PlayCircleIcon className="h-7 w-7 text-[var(--sp-primary)]" />
-                  <span>Obtenir une Démo</span>
+                  <PlayCircleIcon className="h-6 w-6 text-[var(--sp-primary)]" />
+                  <span>Obtenir une demo</span>
                 </button>
               </div>
             </div>
 
             <div className="col-span-5 relative">
               <Image
-                src="/images/Banner/bannerphone.svg"
+                src="/home/images/Banner/bannerphone.svg"
                 alt="solaspay gateway dashboard"
                 width={1013}
                 height={760}

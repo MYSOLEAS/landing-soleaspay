@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { companyInfo } from "../../config/company";
 
 interface ProductType {
   id: number;
@@ -22,19 +23,19 @@ const products: ProductType[] = [
 
 const socialLinks: Social[] = [
   {
-    imgsrc: "/images/Footer/linkedin.svg",
+    imgsrc: "/home/images/Footer/linkedin.svg",
     href: "https://www.linkedin.com/showcase/soleaspay",
   },
   {
-    imgsrc: "/images/Footer/insta.svg",
+    imgsrc: "/home/images/Footer/insta.svg",
     href: "https://instagram.com/soleaspay",
   },
   {
-    imgsrc: "/images/Footer/twitter.svg",
+    imgsrc: "/home/images/Footer/twitter.svg",
     href: "https://twitter.com/mysoleas",
   },
   {
-    imgsrc: "/images/Footer/youtube.svg",
+    imgsrc: "/home/images/Footer/youtube.svg",
     href: "https://youtube.com/soleaspay",
   },
 ];
@@ -45,9 +46,9 @@ const footer = () => {
       <div className="mx-auto max-w-2xl pt-24 pb-16 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div className="grid grid-cols-1 gap-y-12 gap-x-16 sm:grid-cols-2 lg:grid-cols-12 xl:gap-x-8">
           {/* COLUMN-1 */}
-          <div className="col-span-4">
+          <div className="col-span-2">
             <Image
-              src={"/images/Footer/sectigo.svg"}
+              src={"/home/images/Footer/sectigo.svg"}
               alt="sectigo"
               width={150}
               height={100}
@@ -72,7 +73,7 @@ const footer = () => {
           </div>
 
           {/* COLUMN-2 */}
-          <div className="group relative col-span-3">
+          <div className="group relative col-span-2">
             <p className="text-white text-xl font-semibold mb-8">Services</p>
             <ul>
               <li className="mb-4">
@@ -81,6 +82,14 @@ const footer = () => {
                   className="text-inverse-muted text-sm font-normal space-links"
                 >
                   Paiement
+                </Link>
+              </li>
+              <li className="mb-4">
+                <Link
+                  href="/services/payments"
+                  className="text-inverse-muted text-sm font-normal space-links"
+                >
+                  Checkout & liens
                 </Link>
               </li>
               <li className="mb-4">
@@ -99,11 +108,19 @@ const footer = () => {
                   Marketing digital
                 </Link>
               </li>
+              <li className="mb-4">
+                <Link
+                  href="/services/developers"
+                  className="text-inverse-muted text-sm font-normal space-links"
+                >
+                  API
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* COLUMN-3 */}
-          <div className="group col-span-3">
+          <div className="group col-span-2">
             <h3 className="text-white text-xl font-semibold mb-8">
               Ressources
             </h3>
@@ -114,6 +131,15 @@ const footer = () => {
                   className="text-inverse-muted text-sm font-normal space-links"
                 >
                   Developpeurs
+                </Link>
+              </li>
+              <li className="mb-4">
+                <Link
+                  href={companyInfo.documentationUrl}
+                  target="_blank"
+                  className="text-inverse-muted text-sm font-normal space-links"
+                >
+                  Documentation
                 </Link>
               </li>
               <li className="mb-4">
@@ -132,12 +158,50 @@ const footer = () => {
                   FAQ
                 </Link>
               </li>
+            </ul>
+          </div>
+
+          {/* COLUMN-4 */}
+          <div className="group col-span-2">
+            <h3 className="text-white text-xl font-semibold mb-8">Entreprise</h3>
+            <ul>
+              <li className="mb-4">
+                <Link
+                  href="/about"
+                  className="text-inverse-muted text-sm font-normal space-links"
+                >
+                  À propos
+                </Link>
+              </li>
+              <li className="mb-4">
+                <Link
+                  href="/contact"
+                  className="text-inverse-muted text-sm font-normal space-links"
+                >
+                  Contact
+                </Link>
+              </li>
+              <li className="mb-4">
+                <Link
+                  href="/join-us"
+                  className="text-inverse-muted text-sm font-normal space-links"
+                >
+                  Nous Rejoindre
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* COLUMN-5 */}
+          <div className="group col-span-2">
+            <h3 className="text-white text-xl font-semibold mb-8">Légal</h3>
+            <ul>
               <li className="mb-4">
                 <Link
                   href="/terms"
                   className="text-inverse-muted text-sm font-normal space-links"
                 >
-                  Terms & Conditions
+                  Conditions générales
                 </Link>
               </li>
               <li className="mb-4">
@@ -145,61 +209,106 @@ const footer = () => {
                   href="/privacy"
                   className="text-inverse-muted text-sm font-normal space-links"
                 >
-                  Privacy Policy
+                  Politique de confidentialité
+                </Link>
+              </li>
+              <li className="mb-4">
+                <Link
+                  href="/legal/refund-policy"
+                  className="text-inverse-muted text-sm font-normal space-links"
+                >
+                  Politique de remboursement
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* COLUMN-4 */}
+          {/* COLUMN-6 */}
           <div className="group col-span-2">
             <h3 className="text-white text-xl font-semibold mb-8">Contact</h3>
-            <h4 className="text-inverse-muted text-sm font-normal mb-5 flex gap-2">
+            <h4 className="text-inverse-muted text-sm font-normal mb-5 flex gap-2 min-w-0">
               <Image
-                src={"/images/Footer/inputIcon.svg"}
+                src={"/home/images/Footer/inputIcon.svg"}
                 alt="join-us-icon"
                 width={20}
                 height={20}
+                className="shrink-0"
               />
-              <Link href="/join-us">Nous Rejoindre</Link>
+              <Link href="/contact" className="min-w-0 break-words [overflow-wrap:anywhere]">Nous contacter</Link>
             </h4>
-            <h4 className="text-inverse-muted text-sm font-normal mb-5 flex gap-2">
+            <h4 className="text-inverse-muted text-sm font-normal mb-5 flex gap-2 min-w-0">
               <Image
-                src={"/images/Footer/number.svg"}
+                src={"/home/images/Footer/number.svg"}
                 alt="number-icon"
                 width={20}
                 height={20}
+                className="shrink-0"
               />
-              <a href="tel:+237698618200">(+237) 698 618 200</a>
+              <a
+                href={`tel:${companyInfo.phones[0].replace(/\s/g, "")}`}
+                className="min-w-0 break-words [overflow-wrap:anywhere]"
+              >
+                {companyInfo.phones[0]}
+              </a>
             </h4>
-            <h4 className="text-inverse-muted text-sm font-normal mb-5 flex gap-2">
+            <h4 className="text-inverse-muted text-sm font-normal mb-5 flex gap-2 min-w-0">
               <Image
-                src={"/images/Footer/number.svg"}
+                src={"/home/images/Footer/number.svg"}
                 alt="number-icon"
                 width={20}
                 height={20}
+                className="shrink-0"
               />
-              <a href="tel:+237676411506">(+237) 676 411 506</a>
+              <a
+                href={`tel:${companyInfo.phones[1].replace(/\s/g, "")}`}
+                className="min-w-0 break-words [overflow-wrap:anywhere]"
+              >
+                {companyInfo.phones[1]}
+              </a>
             </h4>
-            <h4 className="text-inverse-muted text-sm font-normal mb-5 flex gap-2">
+            <h4 className="text-inverse-muted text-sm font-normal mb-5 flex gap-2 min-w-0">
               <Image
-                src={"/images/Footer/email.svg"}
+                src={"/home/images/Footer/email.svg"}
                 alt="email-icon"
                 width={20}
                 height={20}
+                className="shrink-0"
               />
-              <a href="mailto:support@mysoleas.com" target="_blank">
-                support@mysoleas.com
+              <a
+                href={`mailto:${companyInfo.supportEmail}`}
+                target="_blank"
+                className="min-w-0 break-words [overflow-wrap:anywhere]"
+              >
+                {companyInfo.supportEmail}
               </a>
             </h4>
-            <h4 className="text-inverse-muted text-sm font-normal mb-5 flex gap-2">
+            <h4 className="text-inverse-muted text-sm font-normal mb-5 flex gap-2 min-w-0">
               <Image
-                src={"/images/Footer/address.svg"}
+                src={"/home/images/Footer/email.svg"}
+                alt="business-email-icon"
+                width={20}
+                height={20}
+                className="shrink-0"
+              />
+              <a
+                href={`mailto:${companyInfo.businessEmail}`}
+                target="_blank"
+                className="min-w-0 break-words [overflow-wrap:anywhere]"
+              >
+                {companyInfo.businessEmail}
+              </a>
+            </h4>
+            <h4 className="text-inverse-muted text-sm font-normal mb-5 flex gap-2 min-w-0">
+              <Image
+                src={"/home/images/Footer/address.svg"}
                 alt="address-icon"
                 width={20}
                 height={20}
+                className="shrink-0"
               />
-              Douala CAMEROUN
+              <span className="min-w-0 break-words [overflow-wrap:anywhere]">
+                {companyInfo.businessAddress}
+              </span>
             </h4>
           </div>
         </div>
@@ -210,7 +319,7 @@ const footer = () => {
         <h3 className="text-center text-inverse-muted text-sm">
           ©{new Date().getFullYear()} - All Rights Reserved by{" "}
           <Link
-            href="https://mysoleas.com/"
+            href={companyInfo.parentWebsite}
             target="_blank"
             className="text-white hover:underline"
           >

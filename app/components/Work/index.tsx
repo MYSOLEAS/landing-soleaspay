@@ -27,7 +27,7 @@ const workdata: workdata[] = [
     icon: BanknotesIcon,
     heading: "PAIEMENT MARCHAND",
     subheading:
-      "Que vous soyez une boutique en ligne, un marchand ou un utilisateur lamda, envoyez et recevez des paiements instantanément depuis votre compte SoleasPay.",
+      "Que vous soyez une boutique en ligne, un marchand ou une entreprise, envoyez et recevez des paiements depuis votre compte SoleasPay.",
     url: "/services/payments",
   },
   {
@@ -38,20 +38,13 @@ const workdata: workdata[] = [
     url: "/services/e-bills",
   },
   {
-    icon: LinkIcon,
-    heading: "LIENS DE PAIEMENT",
-    subheading:
-      "Générez gratuitement des liens de paiement pour vendre ou recevoir un paiement instantanément dans votre compte SoleasPay et gérez chacun d'eux.",
-    url: "/home/work#4",
-  },
-  {
     icon: MegaphoneIcon,
     heading: "MARKETING BOOSTER",
     subheading:
       "Restez en contact permanent avec vos clients et partagez avec eux toutes vos nouveautés à travers des campagnes emails et sms marketing directement depuis votre compte SoleasPay.",
     url: "/services/e-marketing",
   },
-  {
+  /*{
     icon: QrCodeIcon,
     heading: "QR CODE",
     subheading:
@@ -62,14 +55,14 @@ const workdata: workdata[] = [
     icon: ArrowsRightLeftIcon,
     heading: "E-CHANGE",
     subheading:
-      "Transférez rapidement votre argent d'un de vos comptes personnels à un autre avec les taux de change les plus bas du marché.",
+      "Transférez votre argent d'un de vos comptes personnels à un autre avec des conditions communiquées dans votre espace SoleasPay.",
     url: "/services/payments",
-  },
+  },*/
   {
     icon: GlobeAltIcon,
     heading: "PAIEMENTS INTERNATIONAUX",
     subheading:
-      "SoleasPay vous permet d'accepter les paiements internationaux par les canaux légaux (Visa, Paypal, etc.) pour faciliter la vente de vos services en ligne et promouvoir la notoriété de votre produit à l'international.",
+      "SoleasPay peut accompagner l'acceptation de moyens de paiement selon les pays, devises, partenaires disponibles et l'éligibilité du marchand.",
     url: "/services/payments",
   },
   {
@@ -77,13 +70,13 @@ const workdata: workdata[] = [
     heading: "REST APIS",
     subheading:
       "Pour des solutions personnalisées, intégrez facilement et rapidement (une seule fois) tous les moyens de paiement supportés par SoleasPay dans votre projet.",
-    url: "/services/payments/",
+    url: "/services/developers",
   },
   {
     icon: ChatBubbleLeftRightIcon,
-    heading: "SUPPORT H24/7",
+    heading: "SUPPORT",
     subheading:
-      "Une équipe technique est disponible en temps réel pour vous accompagner pas à pas 24h/24 et 7j/7.",
+      "Une équipe technique peut vous accompagner dans l'utilisation de SoleasPay et le suivi des demandes liées aux transactions.",
     url: "/join-us",
   },
 ];
@@ -103,8 +96,8 @@ const Work = () => {
             Nous proposons une varieté de produits et service sur mesure pour
             répondre à tous vos besoins de croissance !{" "}
             <br className="hidden md:block" />
-            Tous notre savoir-faire est mis à votre disposition pour vous
-            garantir des résultats à la hauteur de vos attentes à travers :{" "}
+            Notre savoir-faire est mis à votre disposition pour vous aider à
+            structurer vos encaissements à travers :{" "}
           </p>
         </div>
 

@@ -8,14 +8,14 @@ interface featuresdata {
 
 const featuresdata: featuresdata[] = [
     {
-        imgSrc: '/images/Features/featureOne.svg',
+        imgSrc: '/home/images/Features/featureOne.svg',
         heading: 'Securité',
         subheading: 'SoleasPay prends très au sérieux l\'intégrité, la sécurité et la confidentialité de vos données.',
     },
     {
-        imgSrc: '/images/Features/featureTwo.svg',
+        imgSrc: '/home/images/Features/featureTwo.svg',
         heading: 'Paiement assuré',
-        subheading: 'Le client peut être remboursé en cas d\'insatisfaction',
+        subheading: 'Les demandes de remboursement peuvent être examinées selon le marchand, la transaction et le moyen de paiement.',
     },
 ]
 
